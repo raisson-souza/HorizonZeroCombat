@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.app-box {
+    height: 100vh;
+    display: flex;
+    position: relative;
+}
+
+.app-snackbar {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    transform: translate(-50px, -50px);
+    z-index: 999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.app-snackbar p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
