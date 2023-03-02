@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 import "./style.css"
 
+// ICONS
 import PlayCircle from "../../assets/svg/PlayCircle"
+
+// FUNCTIONS
+import PlayAudio from "../../functions/AloysAudio/PlayAudio"
 
 function InitialScreen({ setGameState }) {
     const [ hover, setHover ] = useState(false)
 
     const gameStart = () => {
-        const audio = document.getElementById("aloys-theme-audio")
-        audio.play()
+        PlayAudio()
         setTimeout(() => {
-            setGameState(true)
+            setGameState("loading")
         }, 200)
     }
 

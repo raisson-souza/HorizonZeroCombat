@@ -1,17 +1,36 @@
 import React from "react"
 import "./styles.css"
 
+// AUDIOS
 import AloysThemeAudio from "../../assets/audios/aloys_theme.mp3"
 
-export default function AloysThemeSongSnackbar({ gameStarted }) {
+export default function AloysThemeSongSnackbar({ gameState }) {
     return (
         <div
-            className="app-snackbar"
+            className={
+                ActivateSnackbar(gameState)
+                    ? "app-snackbar app-snackbar-on"
+                    : "app-snackbar app-snackbar-off"
+                }
         >
             <p>
-                { gameStarted ? "Aloy's Theme" : null }
+                {
+                    ActivateSnackbar(gameState)
+                        ? "Aloy's Theme"
+                        : null
+                }
             </p>
-            <audio src={ AloysThemeAudio } controls={ gameStarted } id="aloys-theme-audio"></audio>
+            <audio
+                src={ AloysThemeAudio }
+                controls={ ActivateSnackbar(gameState) }
+                id="aloys-theme-audio"
+            >
+            </audio>
         </div>
     )
+}
+
+const ActivateSnackbar = (gameState) => {
+    if (gameState === "home" || gameState === "loading") return true
+    return false
 }

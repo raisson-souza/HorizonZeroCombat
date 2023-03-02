@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react"
 import "./style.css"
 
+// FUNCTIONS
 import LoadingBar from "../../components/LoadingBar"
 import RandomNumber from "../../functions/RandomNumber"
+import StopAudio from "../../functions/AloysAudio/StopAudio"
+
+// ICONS
 import PlayArrow from "../../assets/svg/PlayArrow"
 
 // GIFS
@@ -12,7 +16,7 @@ import MachineAttacking3 from "../../assets/gifs/machine_attacking3.gif"
 import MachineWalking from "../../assets/gifs/machine_walking.gif"
 import MachineWalking2 from "../../assets/gifs/machine_walking2.gif"
 
-function LoadingScreen({ setLoading }) {
+function LoadingScreen({ setGameState }) {
     const [ gif, setGif               ] = useState(1)
     const [ clueNumber, setClueNumber ] = useState(0)
     const [ barCount, setBarCount     ] = useState(9)
@@ -34,6 +38,11 @@ function LoadingScreen({ setLoading }) {
         }, 5000)
     })
 
+    const StartBattle = () => {
+        StopAudio()
+        setGameState("battle")
+    }
+
     return (
         <div className="loading-box">
             <div className="loading-clue">
@@ -48,6 +57,7 @@ function LoadingScreen({ setLoading }) {
                             <div className="loading-playicon"
                                 onMouseEnter={ () => { setHover(true) } }
                                 onMouseLeave={ () => { setHover(false) } }
+                                onClick={ () => { StartBattle() } }
                             >
                                 <PlayArrow
                                     size={ hover ? 120 : 100 }
