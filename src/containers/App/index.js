@@ -2,26 +2,23 @@ import React, { useState } from "react";
 import InitialScreen from "../InitialScreen";
 import "./style.css"
 
-import AloysThemeAudio from "../../assets/audios/aloys_theme.mp3"
+import LoadingScreen from "../LoadingScreen";
+import AloysThemeSongSnackbar from "../../components/AloysThemeSongSnackbar";
 
 function App() {
     const [ gameStarted, setGameState ] = useState(false)
+    const [ loading, setLoading ] = useState(true)
 
     return (
         <div 
             className={ gameStarted ? "app-box" : null }
         >
-            <div
-                className="app-snackbar"
-            >
-                <p>
-                    { gameStarted ? "Aloy's Theme" : null }
-                </p>
-                <audio src={ AloysThemeAudio } controls={ gameStarted } id="aloys-theme-audio"></audio>
-            </div>
+            <AloysThemeSongSnackbar gameStarted={ gameStarted }/>
             {
                 gameStarted
-                    ? <p>Jogo Começou</p>
+                    ? loading
+                        ? <LoadingScreen setLoading={ setLoading } />
+                        : <p>Batalha</p>
                     : <InitialScreen setGameState={ setGameState } />
             }
         </div>
