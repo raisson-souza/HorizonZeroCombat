@@ -40,7 +40,7 @@ function LoadingScreen({ setGameState }) {
 
     const StartBattle = () => {
         StopAudio()
-        setGameState("battle")
+        setGameState("choosing")
     }
 
     return (

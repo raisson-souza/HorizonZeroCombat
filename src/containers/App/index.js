@@ -25,6 +25,8 @@ const RenderGameScreen = (gameState, setGameState) => {
             return <InitialScreen setGameState={ setGameState } />
         case "loading":
             return <LoadingScreen setGameState={ setGameState } />
+        case "choosing":
+            return <p>ESCOLHA DE PERSONAGEM</p>
         case "battle":
             return <p>TELA DE BATALHA</p>
         case "ending":
