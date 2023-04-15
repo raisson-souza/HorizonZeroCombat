@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 function PlayCircle({ size = 24, fill = "#000000", cursor = "auto" }) {
     return (

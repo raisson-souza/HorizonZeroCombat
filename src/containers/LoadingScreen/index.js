@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import "./style.css"
+import "./styles.css"
 
 // FUNCTIONS
 import LoadingBar from "../../components/LoadingBar"
@@ -90,7 +90,7 @@ const SortedClue = ({ number }) => {
 }
 
 const SortedGif = ({ number }) => {
-    let borderClass;
+    let borderClass
 
     switch (RandomNumber(5)) {
         case 1:

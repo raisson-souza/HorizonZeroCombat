@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import "./style.css"
+import "./styles.css"
 
 // ICONS
 import PlayCircle from "../../assets/svg/PlayCircle"
