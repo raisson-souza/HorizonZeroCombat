@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import "./styles.css"
+import "../Styles/styles.css"
 
 import ComputerIcon from "../../assets/svg/ComputerIcon"
 import ToTitle from "../../functions/ToTitle"
