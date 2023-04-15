@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tiro+Telugu&display=swap");
+.choosing-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../assets/images/wallpapers/horizon-zero-dawn-wallpaper.jpg");
+  background-position: center;
+}
+.choosing-box .choosing-header {
+  width: 100%;
+  height: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #000;
+  background-color: rgb(46, 46, 132);
+  color: rgb(183, 183, 183);
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+}
+.choosing-box .choosing-players-box {
+  width: 100%;
+  height: 74%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+.choosing-box .choosing-players-box .choosing-players-messgage {
+  align-self: flex-start;
+  animation: zoom-in-zoom-out 2s ease-out infinite;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  position: fixed;
+  top: 19%;
+  left: 11%;
+}
+.choosing-box .choosing-players-box .choosing-players-area {
+  width: 75%;
+  height: 85%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 60px;
+  align-items: center;
+}
+.choosing-box .choosing-players-box .choosing-players-area .choosing-player {
+  height: 350px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+.choosing-box .choosing-players-box .choosing-players-area .choosing-player p {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: rgb(81, 81, 81);
+  padding: 10px;
+  border-radius: 30px;
+  color: white;
+}
+.choosing-box .choosing-footer {
+  width: 100%;
+  height: 18%;
+  display: grid;
+  grid-template-areas: "p1 p2" "footer footer";
+  grid-template-rows: 1fr 2fr;
+  backdrop-filter: blur(5px);
+}
+.choosing-box .choosing-footer .choosing-p1 {
+  grid-area: p1;
+  display: flex;
+  align-items: center;
+}
+.choosing-box .choosing-footer .choosing-p1 .choosing-p1-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  padding: 15px;
+  margin-left: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.choosing-box .choosing-footer .choosing-p2 {
+  grid-area: p2;
+  display: flex;
+  justify-content: flex-end;
+}
+.choosing-box .choosing-footer .choosing-p2 .choosing-p2-box {
+  display: grid;
+  grid-template-areas: "computer player" "computer machine";
+  width: fit-content;
+  padding: 15px;
+  margin-right: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.choosing-box .choosing-footer .choosing-p2 .choosing-p2-box .computer-icon {
+  grid-area: computer;
+  border: 2px black solid;
+  height: fit-content;
+  width: fit-content;
+  padding: 3px;
+  margin-right: 10px;
+  border-radius: 60%;
+}
+.choosing-box .choosing-footer .choosing-p2 .choosing-p2-box #choosing-player {
+  grid-area: player;
+}
+.choosing-box .choosing-footer .choosing-p2 .choosing-p2-box #choosing-machine {
+  grid-area: machine;
+}
+.choosing-box .choosing-footer .choosing-footer-area {
+  grid-area: footer;
+  background-color: orange;
+  border-top-left-radius: 70%;
+  border-top-right-radius: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.choosing-box .choosing-footer .choosing-footer-area p {
+  font-size: 50px;
+  font-family: "Tiro Telugu", serif;
+  cursor: pointer;
+}
+.choosing-box .choosing-footer .choosing-footer-area:hover {
+  color: red;
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1) rotate(-35deg);
+  }
+  50% {
+    transform: scale(1.5, 1.5) rotate(-35deg);
+  }
+  100% {
+    transform: scale(1, 1) rotate(-35deg);
+  }
+}
+.choosing-player-config {
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+  width: 250px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.choosing-player-config:hover {
+  height: 350px;
+  width: 300px;
+}
+
+.choosing-player-box-activated {
+  background-color: green;
+  transition: 0.3s;
+}
+.choosing-player-box-activated:hover {
+  background-color: lightgreen;
+}
+
+.choosing-player-box-deactivated {
+  background-color: orangered;
+  transition: 0.3s;
+}
+.choosing-player-box-deactivated:hover {
+  background-color: yellow;
+}
+
+.choosing-player01 {
+  background-image: url("../../assets/images/machines/watcher.webp");
+  background-size: 107%;
+}
+
+.choosing-player02 {
+  background-image: url("../../assets/images/machines/strider.webp");
+  background-size: 107%;
+}
+
+.choosing-player03 {
+  background-image: url("../../assets/images/machines/scrapper.webp");
+  background-size: 120%;
+}
+
+.choosing-player04 {
+  background-image: url("../../assets/images/machines/grazer.webp");
+  background-size: 80%;
+}
+
+#choosing-player {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+#choosing-machine {
+  font-family: "Tiro Telugu", serif;
+}
+
+/*# sourceMappingURL=styles.css.map */

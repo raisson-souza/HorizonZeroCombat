@@ -4,6 +4,7 @@ import "./style.css"
 // SCREENS
 import InitialScreen from "../InitialScreen"
 import LoadingScreen from "../LoadingScreen"
+import ChoosingScreen from "../ChoosingScreen"
 
 // AUDIOS
 import AloysThemeSongSnackbar from "../../components/AloysThemeSongSnackbar"
@@ -26,7 +27,7 @@ const RenderGameScreen = (gameState, setGameState) => {
         case "loading":
             return <LoadingScreen setGameState={ setGameState } />
         case "choosing":
-            return <p>ESCOLHA DE PERSONAGEM</p>
+            return <ChoosingScreen setGameState={ setGameState } />
         case "battle":
             return <p>TELA DE BATALHA</p>
         case "ending":
