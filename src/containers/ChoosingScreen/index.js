@@ -1,10 +1,10 @@
 import React, { useState } from "react"
-import "../Styles/styles.css"
+import "./styles.css"
 
 import ComputerIcon from "../../assets/svg/ComputerIcon"
 import ToTitle from "../../functions/ToTitle"
-import ShieldIcon from "../../assets/svg/ShieldIcon"
-import InfoIcon from "../../assets/svg/InfoIcon"
+// import ShieldIcon from "../../assets/svg/ShieldIcon"
+// import InfoIcon from "../../assets/svg/InfoIcon"
 import SwordIcon from "../../assets/svg/SwordIcon.png"
 
 function ChoosingScreen({ setGameState }) {
@@ -29,7 +29,7 @@ function ChoosingScreen({ setGameState }) {
                         }}
                     >
                         <div className="choosing-player01 choosing-player-config">
-                            <img src={SwordIcon} height="20px" />
+                            <img src={ SwordIcon } height="20px" alt="sword-icon" />
                         </div>
                         <p>Watcher</p>
                     </div>
@@ -127,7 +127,7 @@ const choosingMachine = (playerSet, P1, setP1, P2, SetP2, machine) => {
         if (machine === P2) {
             alert(`${ ToTitle(machine) } já foi escolhido pelo jogador 2!`)
         } else {
-            if (machine != P1) {
+            if (machine !== P1) {
                 setP1(machine)
             }
         }
@@ -135,7 +135,7 @@ const choosingMachine = (playerSet, P1, setP1, P2, SetP2, machine) => {
         if (machine === P1){
             alert(`${ ToTitle(machine) } já foi escolhido pelo jogador 1!`)
         } else {
-            if (machine != P2) {
+            if (machine !== P2) {
                 SetP2(machine)
             }
         }
@@ -143,7 +143,7 @@ const choosingMachine = (playerSet, P1, setP1, P2, SetP2, machine) => {
 }
 
 const choosingPlayer = (playerSet, setPlayer, playerOption) => {
-    if (playerOption != playerSet) {
+    if (playerOption !== playerSet) {
         setPlayer(playerOption)
     }
 }
