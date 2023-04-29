@@ -49,23 +49,6 @@
   gap: 60px;
   align-items: center;
 }
-.choosing-box .choosing-players-box .choosing-players-area .choosing-player {
-  height: 350px;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 24px;
-  cursor: pointer;
-}
-.choosing-box .choosing-players-box .choosing-players-area .choosing-player p {
-  font-family: "Josefin Sans", sans-serif;
-  background-color: rgb(81, 81, 81);
-  padding: 10px;
-  border-radius: 30px;
-  color: white;
-}
 .choosing-box .choosing-footer {
   width: 100%;
   height: 18%;
@@ -177,26 +160,6 @@
 }
 .choosing-player-box-deactivated:hover {
   background-color: yellow;
-}
-
-.choosing-player01 {
-  background-image: url("../../assets/images/machines/watcher.webp");
-  background-size: 107%;
-}
-
-.choosing-player02 {
-  background-image: url("../../assets/images/machines/strider.webp");
-  background-size: 107%;
-}
-
-.choosing-player03 {
-  background-image: url("../../assets/images/machines/scrapper.webp");
-  background-size: 120%;
-}
-
-.choosing-player04 {
-  background-image: url("../../assets/images/machines/grazer.webp");
-  background-size: 80%;
 }
 
 #choosing-player {

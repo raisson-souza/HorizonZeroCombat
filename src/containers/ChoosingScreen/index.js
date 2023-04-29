@@ -1,11 +1,18 @@
 import React, { useState } from "react"
 import "./styles.css"
 
-import ComputerIcon from "../../assets/svg/ComputerIcon"
+// functions
 import ToTitle from "../../functions/ToTitle"
-// import ShieldIcon from "../../assets/svg/ShieldIcon"
-// import InfoIcon from "../../assets/svg/InfoIcon"
-import SwordIcon from "../../assets/svg/SwordIcon.png"
+
+// assets
+import ComputerIcon from "../../assets/svg/ComputerIcon"
+import watcherImage from "../../assets/images/machines/watcher.webp"
+import striderImage from "../../assets/images/machines/strider.webp"
+import scrapperImage from "../../assets/images/machines/scrapper.webp"
+import grazerImage from "../../assets/images/machines/grazer.webp"
+
+// components
+import Machine from "./components/RenderMachine"
 
 function ChoosingScreen({ setGameState }) {
     const [ playerSet, setPlayer ] = useState(1)
@@ -22,38 +29,22 @@ function ChoosingScreen({ setGameState }) {
                     Escolha sua<br />Máquina
                 </div>
                 <div className="choosing-players-area">
-                    <div
-                        className="choosing-player"
-                        onClick={ () => {
-                            choosingMachine(playerSet, P1, SetP1, P2, SetP2, 'watcher')
-                        }}
-                    >
-                        <div className="choosing-player01 choosing-player-config">
-                            <img src={ SwordIcon } height="20px" alt="sword-icon" />
-                        </div>
-                        <p>Watcher</p>
-                    </div>
-                    <div className="choosing-player" onClick={ () => {
-                        choosingMachine(playerSet, P1, SetP1, P2, SetP2, 'strider')
+                    {
+                        RenderMachines(
+                            choosingMachine,
+                            playerSet,
+                            P1,
+                            P2,
+                            SetP1,
+                            SetP2,
+                            [
+                                ["watcher", watcherImage],
+                                ["strider", striderImage],
+                                ["scrapper", scrapperImage],
+                                ["grazer", grazerImage],
+                            ],
+                        )
                     }
-                    }>
-                        <div className="choosing-player02 choosing-player-config" />
-                        <p>Strider</p>
-                    </div>
-                    <div className="choosing-player" onClick={ () => {
-                        choosingMachine(playerSet, P1, SetP1, P2, SetP2, 'scrapper')
-                    }
-                    }>
-                        <div className="choosing-player03 choosing-player-config" />
-                        <p>Scrapper</p>
-                    </div>
-                    <div className="choosing-player" onClick={ () => {
-                        choosingMachine(playerSet, P1, SetP1, P2, SetP2, 'grazer')
-                    }
-                    }>
-                        <div className="choosing-player04 choosing-player-config" />
-                        <p>Grazer</p>
-                    </div>
                 </div>
             </div>
             <footer className="choosing-footer">
@@ -94,6 +85,32 @@ function ChoosingScreen({ setGameState }) {
             </footer>
         </div>
     )
+}
+
+const RenderMachines = (
+    choosingMachine,
+    playerSet,
+    P1,
+    P2,
+    SetP1,
+    SetP2,
+    machinesList,
+    iconsList = null,
+) => {
+    return [...Array(machinesList.length)].map((_, i) => (
+        <Machine
+            choosingMachine={ choosingMachine }
+            playerSet={ playerSet }
+            P1={ P1 }
+            P2={ P2 }
+            SetP1={ SetP1 }
+            SetP2={ SetP2 }
+            machineName={ machinesList[i][0] }
+            machineImage={ machinesList[i][1] }
+            iconName={ iconsList != null ? iconsList[i][0] : null }
+            iconImage={ iconsList != null ? iconsList[i][1] : null }
+        />
+    ))
 }
 
 const startFight = (P1, P2, setGameState) => {
