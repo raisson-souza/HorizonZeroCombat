@@ -38,6 +38,13 @@ import HorizonZeroDawnWallpaperImage from "./images/wallpapers/horizon-zero-dawn
 
 import SwordIconImage from "./images/others/SwordIcon.png"
 
+// SVG
+import ComputerIconSvg from "./svg/ComputerIcon"
+import InfoIconSvg from "./svg/InfoIcon"
+import PlayArrowIconSvg from "./svg/PlayArrow"
+import PlayCircleIconSvg from "./svg/PlayCircle"
+import ShieldIconSvg from "./svg/ShieldIcon"
+
 export {
     AloysThemeAudio,
     CancelledActionAudio,
@@ -67,5 +74,10 @@ export {
     StriderBackgroundImage,
     WatcherBackgroundImage,
     HorizonZeroDawnWallpaperImage,
-    SwordIconImage
+    SwordIconImage,
+    ComputerIconSvg,
+    InfoIconSvg,
+    PlayArrowIconSvg,
+    PlayCircleIconSvg,
+    ShieldIconSvg,
 }

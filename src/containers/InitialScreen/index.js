@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import "./styles.css"
 
-// ICONS
-import PlayCircle from "../../assets/svg/PlayCircle"
+// ASSETS
+import { PlayCircleIconSvg } from "../../assets/index"
 
 // FUNCTIONS
 import PlayAudio from "../../functions/AloysAudio/PlayAudio"
@@ -31,14 +31,14 @@ function InitialScreen({ setGameState }) {
                     {
                         hover
                             ? (
-                                <PlayCircle
+                                <PlayCircleIconSvg
                                     size={ 80 }
                                     fill="#fff"
                                     cursor="pointer"
                                 />
                             )
                             : (
-                                <PlayCircle
+                                <PlayCircleIconSvg
                                     size={ 60 }
                                     fill="#fff"
                                     cursor="pointer"

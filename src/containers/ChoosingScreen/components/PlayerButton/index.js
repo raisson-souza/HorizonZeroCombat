@@ -5,7 +5,7 @@ import "./styles.css"
 import ToTitle from "../../../../functions/ToTitle"
 
 // ASSETS
-import ComputerIcon from "../../../../assets/svg/ComputerIcon"
+import { ComputerIconSvg } from "../../../../assets/index"
 
 function PlayerButton({
     playerSet,
@@ -38,7 +38,7 @@ function PlayerButton({
                     onClick={ () => { choosingPlayer(playerSet, setPlayer, playerNumber) } }
                 >
                     <div className="computer-icon">
-                        <ComputerIcon />
+                        <ComputerIconSvg />
                     </div>
                     <p id="choosing-player">{ `PLAYER 0${ playerNumber }` }</p>
                     <p id="choosing-machine">

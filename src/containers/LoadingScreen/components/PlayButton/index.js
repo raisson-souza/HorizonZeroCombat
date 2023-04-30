@@ -5,7 +5,7 @@ import "./styles.css"
 import StopAudio from "../../../../functions/AloysAudio/StopAudio"
 
 // ASSETS
-import PlayArrow from "../../../../assets/svg/PlayArrow"
+import { PlayArrowIconSvg } from "../../../../assets/index"
 
 function PlayButton({ setGameState }) {
     const [ hover, setHover ] = useState(false)
@@ -18,7 +18,7 @@ function PlayButton({ setGameState }) {
                 onMouseLeave={ () => { setHover(false) } }
                 onClick={ () => { StartBattle(setGameState) } }
             >
-                <PlayArrow
+                <PlayArrowIconSvg
                     size={ hover ? 120 : 100 }
                     cursor="pointer"
                     fill="#4FBF26"
