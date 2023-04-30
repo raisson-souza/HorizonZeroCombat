@@ -1,60 +1,54 @@
 .initial-wrapper {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
-
-.initial-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("../../assets/gifs/horizon_zero_dawn.gif");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: blur(5px);
-    z-index: 1;
+.initial-wrapper .initial-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/gifs/horizon_zero_dawn.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(5px);
+  z-index: 1;
 }
-
-.initial-content {
-    height: 200px;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
+.initial-wrapper .initial-content {
+  height: 200px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.initial-wrapper .initial-content p {
+  font-size: 30px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+.initial-wrapper .initial-content svg:hover() {
+  height: 90;
+  width: 90;
 }
 
 .initial-content-depth {
-    border-radius: 30px;
-    background: linear-gradient(145deg, #1d46c2, #4670f1);
-    box-shadow:  20px 20px 30px #3759bf,
-                -20px -20px 30px #4b79ff;
-}
-
-.initial-content p {
-    font-size: 30px;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.initial-content svg:hover() {
-    height: 90;
-    width: 90;
+  border-radius: 30px;
+  background: linear-gradient(145deg, #1d46c2, #4670f1);
+  box-shadow: 20px 20px 30px #3759bf, -20px -20px 30px #4b79ff;
 }
 
 .initial-content-icon {
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=styles.css.map */
