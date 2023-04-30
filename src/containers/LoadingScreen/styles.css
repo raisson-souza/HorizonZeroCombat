@@ -1,78 +1,80 @@
 .loading-box {
-    background: linear-gradient(233deg, #2d2d2d, #000b47, #001692);
-    background-size: 600% 600%;
-
-    -webkit-animation: AnimationName 14s ease infinite;
-    animation: AnimationName 14s ease infinite;
-
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+  background: linear-gradient(233deg, #2d2d2d, #000b47, #001692);
+  background-size: 600% 600%;
+  -webkit-animation: AnimationName 14s ease infinite;
+  animation: AnimationName 14s ease infinite;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.loading-box .loading-clue {
+  height: 500px;
+  width: 700px;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  border-radius: 88px;
+  background: #000e5f;
+  box-shadow: inset 5px 5px 11px #000731, inset -5px -5px 11px #00158a;
+}
+.loading-box .loading-clue img {
+  width: 450px;
+  height: 300px;
+  background: linear-gradient(145deg, #0521b9, #051c9c);
+  box-shadow: 5px 5px 11px #031574, -5px -5px 11px #0729e6;
+}
+.loading-box .loading-clue p {
+  font-family: "Raleway", sans-serif;
+  color: white;
+  font-size: 20px;
 }
 
 @-webkit-keyframes AnimationName {
-    0%{background-position:0% 91%}
-    50%{background-position:100% 10%}
-    100%{background-position:0% 91%}
+  0% {
+    background-position: 0% 91%;
+  }
+  50% {
+    background-position: 100% 10%;
+  }
+  100% {
+    background-position: 0% 91%;
+  }
 }
 @keyframes AnimationName {
-    0%{background-position:0% 91%}
-    50%{background-position:100% 10%}
-    100%{background-position:0% 91%}
+  0% {
+    background-position: 0% 91%;
+  }
+  50% {
+    background-position: 100% 10%;
+  }
+  100% {
+    background-position: 0% 91%;
+  }
 }
-
-.loading-clue {
-    height: 500px;
-    width: 700px;
-    position: absolute;
-    z-index: 1;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-
-    border-radius: 88px;
-    background: #000e5f;
-    box-shadow: inset 5px 5px 11px #000731,
-                inset -5px -5px 11px #00158a;
-}
-
-.loading-clue img {
-    width: 450px;
-    height: 300px;
-    background: linear-gradient(145deg, #0521b9, #051c9c);
-    box-shadow:  5px 5px 11px #031574,
-                -5px -5px 11px #0729e6;
-}
-
-.loading-clue p {
-    font-family: 'Raleway', sans-serif;
-    color: white;
-    font-size: 20px;
-}
-
 .borderClass01 {
-    border-radius: 25% 75% 18% 82% / 36% 17% 83% 64%
+  border-radius: 25% 75% 18% 82%/36% 17% 83% 64%;
 }
 
 .borderClass02 {
-    border-radius: 65% 35% 100% 0% / 36% 17% 83% 64% 
+  border-radius: 65% 35% 100% 0%/36% 17% 83% 64%;
 }
 
 .borderClass03 {
-    border-radius: 65% 35% 55% 45% / 13% 46% 54% 87% 
+  border-radius: 65% 35% 55% 45%/13% 46% 54% 87%;
 }
 
 .borderClass04 {
-    border-radius: 17% 83% 55% 45% / 85% 20% 80% 15% 
+  border-radius: 17% 83% 55% 45%/85% 20% 80% 15%;
 }
 
 .borderClass05 {
-    border-radius: 83% 17% 16% 84% / 74% 74% 26% 26% 
-}
+  border-radius: 83% 17% 16% 84%/74% 74% 26% 26%;
+}/*# sourceMappingURL=styles.css.map */
