@@ -12,6 +12,7 @@ import {
 // COMPONENTS
 import Machine from "./components/RenderMachine"
 import PlayerButton from "./components/PlayerButton"
+import MachineButton from "./components/MachineButton"
 import FightButton from "./components/FightButton"
 
 function ChoosingScreen({ setGameState }) {
@@ -51,14 +52,11 @@ function ChoosingScreen({ setGameState }) {
                     playerSet={ playerSet }
                     setPlayer={ setPlayer }
                     player={ P1 }
-                    playerNumber={ 1 }
                 />
-                <PlayerButton
+                <MachineButton
                     playerSet={ playerSet }
                     setPlayer={ setPlayer }
                     player={ P2 }
-                    playerNumber={ 2 }
-                    is2ndPlayer
                 />
                 <div className="choosing-footer-area">
                     <FightButton

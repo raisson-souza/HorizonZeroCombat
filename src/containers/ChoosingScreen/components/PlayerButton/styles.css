@@ -15,36 +15,6 @@
   cursor: pointer;
 }
 
-.choosing-p2 {
-  grid-area: p2;
-  display: flex;
-  justify-content: flex-end;
-}
-.choosing-p2 .choosing-p2-box {
-  display: grid;
-  grid-template-areas: "computer player" "computer machine";
-  width: fit-content;
-  padding: 15px;
-  margin-right: 50px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.choosing-p2 .choosing-p2-box .computer-icon {
-  grid-area: computer;
-  border: 2px black solid;
-  height: fit-content;
-  width: fit-content;
-  padding: 3px;
-  margin-right: 10px;
-  border-radius: 60%;
-}
-.choosing-p2 .choosing-p2-box #choosing-player {
-  grid-area: player;
-}
-.choosing-p2 .choosing-p2-box #choosing-machine {
-  grid-area: machine;
-}
-
 .choosing-player-box-activated {
   background-color: green;
   transition: 0.3s;
