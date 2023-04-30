@@ -1,31 +1,28 @@
 .app-snackbar {
-    position: absolute;
-    top: 10%;
-    left: 5%;
-    transform: translate(-50px, -50px);
-    z-index: 999;
-
-    /* display: flex; */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-    gap: 10px;
-    padding: 10px;
-    background-color: rgb(0, 149, 255);
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  transform: translate(-50px, -50px);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  gap: 10px;
+  padding: 10px;
+  background-color: rgb(0, 149, 255);
+}
+.app-snackbar p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
 }
 
 .app-snackbar-on {
-    display: flex;
-    background-color: rgb(0, 149, 255);
+  display: flex;
+  background-color: rgb(0, 149, 255);
 }
 
 .app-snackbar-off {
-    display: none !important;
-    background-color: transparent !important;
-}
-
-.app-snackbar p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-}
+  display: none !important;
+  background-color: transparent !important;
+}/*# sourceMappingURL=styles.css.map */
