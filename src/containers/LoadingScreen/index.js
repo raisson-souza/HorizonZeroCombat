@@ -20,7 +20,7 @@ import LoadingComponent from "./components/LoadingComponent"
 function LoadingScreen({ setGameState }) {
     const [ gif, setGif               ] = useState(1)
     const [ clueNumber, setClueNumber ] = useState(0)
-    const [ barCount, setBarCount     ] = useState(11)
+    const [ barCount, setBarCount     ] = useState(8)
 
     useEffect(() => {
         setTimeout(() => {
