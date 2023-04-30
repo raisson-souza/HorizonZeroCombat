@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import "./styles.css"
 
 // FUNCTIONS
-import LoadingBar from "../../components/LoadingBar"
 import RandomNumber from "../../functions/RandomNumber"
 
 // GIFS
@@ -14,11 +13,12 @@ import MachineWalking2 from "../../assets/gifs/machine_walking2.gif"
 
 // COMPONENTS
 import PlayButton from "./components/PlayButton"
+import LoadingComponent from "./components/LoadingComponent"
 
 function LoadingScreen({ setGameState }) {
     const [ gif, setGif               ] = useState(1)
     const [ clueNumber, setClueNumber ] = useState(0)
-    const [ barCount, setBarCount     ] = useState(9)
+    const [ barCount, setBarCount     ] = useState(11)
 
     useEffect(() => {
         setTimeout(() => {
@@ -44,13 +44,8 @@ function LoadingScreen({ setGameState }) {
             </div>
             {
                 barCount > 10
-                    ? ( <PlayButton setGameState={ setGameState } /> )
-                    : (
-                        <div className="loading-bar-progress">
-                            <LoadingBar level={ barCount } />
-                            <p>Carregando...</p>
-                        </div>
-                    )
+                    ? <PlayButton setGameState={ setGameState } />
+                    : <LoadingComponent barCount={ barCount } />
             }
         </div>
     )
