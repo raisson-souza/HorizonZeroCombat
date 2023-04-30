@@ -5,11 +5,13 @@ import "./styles.css"
 import RandomNumber from "../../functions/RandomNumber"
 
 // GIFS
-import MachineAttacking from "../../assets/gifs/machine_attacking.gif"
-import MachineAttacking2 from "../../assets/gifs/machine_attacking2.gif"
-import MachineAttacking3 from "../../assets/gifs/machine_attacking3.gif"
-import MachineWalking from "../../assets/gifs/machine_walking.gif"
-import MachineWalking2 from "../../assets/gifs/machine_walking2.gif"
+import {
+    MachineAttacking1Gif,
+    MachineAttacking2Gif,
+    MachineAttacking3Gif,
+    MachineWalking1Gif,
+    MachineWalking2Gif,
+} from "../../assets/index"
 
 // COMPONENTS
 import PlayButton from "./components/PlayButton"
@@ -88,17 +90,17 @@ const SortedGif = ({ number }) => {
 
     switch(number) {
         case 1:
-            return <img src={ MachineAttacking } className={ borderClass } alt="MachineAttacking" />
+            return <img src={ MachineAttacking1Gif } className={ borderClass } alt="MachineAttacking" />
         case 2:
-            return <img src={ MachineAttacking2 } className={ borderClass } alt="MachineWalking2" />
+            return <img src={ MachineAttacking2Gif } className={ borderClass } alt="MachineWalking2" />
         case 3:
-            return <img src={ MachineAttacking3 } className={ borderClass } alt="MachineWalking3" />
+            return <img src={ MachineAttacking3Gif } className={ borderClass } alt="MachineWalking3" />
         case 4:
-            return <img src={ MachineWalking } className={ borderClass } alt="MachineWalking" />
+            return <img src={ MachineWalking1Gif } className={ borderClass } alt="MachineWalking" />
         case 5:
-            return <img src={ MachineWalking2 } className={ borderClass } alt="MachineWalking2" />
+            return <img src={ MachineWalking2Gif } className={ borderClass } alt="MachineWalking2" />
         default:
-            return <img src={ MachineAttacking } className={ borderClass } alt="MachineAttacking" />
+            return <img src={ MachineAttacking1Gif } className={ borderClass } alt="MachineAttacking" />
     }
 }
 

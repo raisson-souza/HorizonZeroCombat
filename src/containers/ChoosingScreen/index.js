@@ -2,10 +2,12 @@ import React, { useState } from "react"
 import "./styles.css"
 
 // ASSETS
-import watcherImage from "../../assets/images/machines/watcher.webp"
-import striderImage from "../../assets/images/machines/strider.webp"
-import scrapperImage from "../../assets/images/machines/scrapper.webp"
-import grazerImage from "../../assets/images/machines/grazer.webp"
+import {
+    WatcherImage,
+    StriderImage,
+    ScrapperImage,
+    GrazerImage,
+} from "../../assets/index"
 
 // COMPONENTS
 import Machine from "./components/RenderMachine"
@@ -35,10 +37,10 @@ function ChoosingScreen({ setGameState }) {
                             SetP1,
                             SetP2,
                             [
-                                ["watcher", watcherImage],
-                                ["strider", striderImage],
-                                ["scrapper", scrapperImage],
-                                ["grazer", grazerImage],
+                                ["watcher", WatcherImage],
+                                ["strider", StriderImage],
+                                ["scrapper", ScrapperImage],
+                                ["grazer", GrazerImage],
                             ],
                         )
                     }

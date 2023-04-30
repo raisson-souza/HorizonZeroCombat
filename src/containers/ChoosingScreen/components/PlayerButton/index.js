@@ -1,7 +1,10 @@
 import React from "react"
 import "./styles.css"
 
+// FUNCTIONS
 import ToTitle from "../../../../functions/ToTitle"
+
+// ASSETS
 import ComputerIcon from "../../../../assets/svg/ComputerIcon"
 
 function PlayerButton({

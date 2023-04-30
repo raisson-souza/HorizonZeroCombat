@@ -1,7 +1,10 @@
 import React, { useState } from "react"
 import "./styles.css"
 
+// FUNCTIONS
 import StopAudio from "../../../../functions/AloysAudio/StopAudio"
+
+// ASSETS
 import PlayArrow from "../../../../assets/svg/PlayArrow"
 
 function PlayButton({ setGameState }) {

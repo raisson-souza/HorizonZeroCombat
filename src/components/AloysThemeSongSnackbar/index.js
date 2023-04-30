@@ -2,7 +2,7 @@ import React from "react"
 import "./styles.css"
 
 // AUDIOS
-import AloysThemeAudio from "../../assets/audios/aloys_theme.mp3"
+import { AloysThemeAudio } from "../../assets/index"
 
 export default function AloysThemeSongSnackbar({ gameState }) {
     return (

@@ -6,7 +6,7 @@ import InitialScreen from "../InitialScreen"
 import LoadingScreen from "../LoadingScreen"
 import ChoosingScreen from "../ChoosingScreen"
 
-// AUDIOS
+// COMPONENTS
 import AloysThemeSongSnackbar from "../../components/AloysThemeSongSnackbar"
 
 function App() {
