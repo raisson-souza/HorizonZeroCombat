@@ -19,7 +19,7 @@ import MachineWalking2 from "../../assets/gifs/machine_walking2.gif"
 function LoadingScreen({ setGameState }) {
     const [ gif, setGif               ] = useState(1)
     const [ clueNumber, setClueNumber ] = useState(0)
-    const [ barCount, setBarCount     ] = useState(9)
+    const [ barCount, setBarCount     ] = useState(11)
     const [ hover, setHover           ] = useState(false)
 
     useEffect(() => {

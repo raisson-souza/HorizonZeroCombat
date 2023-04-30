@@ -5,7 +5,6 @@ import "./styles.css"
 import ToTitle from "../../functions/ToTitle"
 
 // assets
-import ComputerIcon from "../../assets/svg/ComputerIcon"
 import watcherImage from "../../assets/images/machines/watcher.webp"
 import striderImage from "../../assets/images/machines/strider.webp"
 import scrapperImage from "../../assets/images/machines/scrapper.webp"
@@ -13,6 +12,7 @@ import grazerImage from "../../assets/images/machines/grazer.webp"
 
 // components
 import Machine from "./components/RenderMachine"
+import PlayerButton from "./components/PlayerButton"
 
 function ChoosingScreen({ setGameState }) {
     const [ playerSet, setPlayer ] = useState(1)
@@ -31,7 +31,7 @@ function ChoosingScreen({ setGameState }) {
                 <div className="choosing-players-area">
                     {
                         RenderMachines(
-                            choosingMachine,
+                            choosingMachine, // deveria ficar lá
                             playerSet,
                             P1,
                             P2,
@@ -48,33 +48,19 @@ function ChoosingScreen({ setGameState }) {
                 </div>
             </div>
             <footer className="choosing-footer">
-                <div className="choosing-p1">
-                    <div
-                        className={ renderPlayerChoosing(playerSet, 1) }
-                        onClick={ () => { choosingPlayer(playerSet, setPlayer, 1) } }
-                    >
-                        <p id="choosing-player">PLAYER 01</p>
-                        <p id="choosing-machine">
-                            { renderPlayerMachine(P1) }
-                        </p>
-                    </div>
-                </div>
-                <div className="choosing-p2">
-                    <div style={{ margin: 2 }}>
-                        <div
-                            className={ renderPlayerChoosing(playerSet, 2) }
-                            onClick={ () => { choosingPlayer(playerSet, setPlayer, 2) } }
-                        >
-                            <div className="computer-icon">
-                                <ComputerIcon />
-                            </div>
-                            <p id="choosing-player">PLAYER 02</p>
-                            <p id="choosing-machine">
-                                { renderPlayerMachine(P2) }
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <PlayerButton
+                    playerSet={ playerSet }
+                    setPlayer={ setPlayer }
+                    player={ P1 }
+                    playerNumber={ 1 }
+                />
+                <PlayerButton
+                    playerSet={ playerSet }
+                    setPlayer={ setPlayer }
+                    player={ P2 }
+                    playerNumber={ 2 }
+                    is2ndPlayer
+                />
                 <div className="choosing-footer-area">
                     <p
                         onClick={ () => { startFight(P1, P2, setGameState) } }
@@ -127,18 +113,6 @@ const startFight = (P1, P2, setGameState) => {
     }
 }
 
-const renderPlayerChoosing = (playerSet, player) => {
-    return playerSet === player
-        ? `choosing-p${ player }-box choosing-player-box-activated`
-        : `choosing-p${ player }-box choosing-player-box-deactivated`
-}
-
-const renderPlayerMachine = (playerMachine) => {
-    return playerMachine === ''
-        ? '- - -'
-        : ToTitle(playerMachine)
-}
-
 const choosingMachine = (playerSet, P1, setP1, P2, SetP2, machine) => {
     if (playerSet === 1) {
         if (machine === P2) {
@@ -156,12 +130,6 @@ const choosingMachine = (playerSet, P1, setP1, P2, SetP2, machine) => {
                 SetP2(machine)
             }
         }
-    }
-}
-
-const choosingPlayer = (playerSet, setPlayer, playerOption) => {
-    if (playerOption !== playerSet) {
-        setPlayer(playerOption)
     }
 }
 

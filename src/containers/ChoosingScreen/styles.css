@@ -57,51 +57,6 @@
   grid-template-rows: 1fr 2fr;
   backdrop-filter: blur(5px);
 }
-.choosing-box .choosing-footer .choosing-p1 {
-  grid-area: p1;
-  display: flex;
-  align-items: center;
-}
-.choosing-box .choosing-footer .choosing-p1 .choosing-p1-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 130px;
-  padding: 15px;
-  margin-left: 50px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.choosing-box .choosing-footer .choosing-p2 {
-  grid-area: p2;
-  display: flex;
-  justify-content: flex-end;
-}
-.choosing-box .choosing-footer .choosing-p2 .choosing-p2-box {
-  display: grid;
-  grid-template-areas: "computer player" "computer machine";
-  width: fit-content;
-  padding: 15px;
-  margin-right: 50px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.choosing-box .choosing-footer .choosing-p2 .choosing-p2-box .computer-icon {
-  grid-area: computer;
-  border: 2px black solid;
-  height: fit-content;
-  width: fit-content;
-  padding: 3px;
-  margin-right: 10px;
-  border-radius: 60%;
-}
-.choosing-box .choosing-footer .choosing-p2 .choosing-p2-box #choosing-player {
-  grid-area: player;
-}
-.choosing-box .choosing-footer .choosing-p2 .choosing-p2-box #choosing-machine {
-  grid-area: machine;
-}
 .choosing-box .choosing-footer .choosing-footer-area {
   grid-area: footer;
   background-color: orange;
@@ -144,28 +99,4 @@
 .choosing-player-config:hover {
   height: 350px;
   width: 300px;
-}
-
-.choosing-player-box-activated {
-  background-color: green;
-  transition: 0.3s;
-}
-.choosing-player-box-activated:hover {
-  background-color: lightgreen;
-}
-
-.choosing-player-box-deactivated {
-  background-color: orangered;
-  transition: 0.3s;
-}
-.choosing-player-box-deactivated:hover {
-  background-color: yellow;
-}
-
-#choosing-player {
-  font-family: "Montserrat", sans-serif !important;
-}
-
-#choosing-machine {
-  font-family: "Tiro Telugu", serif;
 }/*# sourceMappingURL=styles.css.map */
