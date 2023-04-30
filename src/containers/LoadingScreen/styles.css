@@ -79,33 +79,6 @@
     color: white;
 }
 
-.loading-play {
-    position: absolute;
-    z-index: 1;
-    top: 85%;
-    left: 50%;
-    transform: translate(-50px, -50px);
-
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-    width: 120px;
-}
-
-.loading-play p {
-    font-size: 24px;
-    font-family: 'Shantell Sans', cursive;
-    color: white;
-}
-
-.loading-playicon {
-    display: "flex";
-    height: 120px;
-    justify-content: center;
-    align-items: center;
-}
-
 .borderClass01 {
     border-radius: 25% 75% 18% 82% / 36% 17% 83% 64%
 }
