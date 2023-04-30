@@ -13,6 +13,7 @@ import grazerImage from "../../assets/images/machines/grazer.webp"
 // components
 import Machine from "./components/RenderMachine"
 import PlayerButton from "./components/PlayerButton"
+import FightButton from "./components/FightButton"
 
 function ChoosingScreen({ setGameState }) {
     const [ playerSet, setPlayer ] = useState(1)
@@ -62,11 +63,11 @@ function ChoosingScreen({ setGameState }) {
                     is2ndPlayer
                 />
                 <div className="choosing-footer-area">
-                    <p
-                        onClick={ () => { startFight(P1, P2, setGameState) } }
-                    >
-                        FIGHT !
-                    </p>
+                    <FightButton
+                        P1={ P1 }
+                        P2={ P2 }
+                        setGameState={ setGameState }
+                    />
                 </div>
             </footer>
         </div>
@@ -97,20 +98,6 @@ const RenderMachines = (
             iconImage={ iconsList != null ? iconsList[i][1] : null }
         />
     ))
-}
-
-const startFight = (P1, P2, setGameState) => {
-    if (P1 === "" && P2 === "") {
-        alert("Nenhum máquina escolhida por nenhum jogador!")
-    } else if (P1 === "") {
-        alert("Jogador 1 não escolheu uma máquina!")
-    } else if (P2 === "") {
-        alert("Jogador 2 não escolheu uma máquina!")
-    } else {
-        setTimeout(() => {
-            setGameState("battle")
-        }, 1000)
-    }
 }
 
 const choosingMachine = (playerSet, P1, setP1, P2, SetP2, machine) => {
