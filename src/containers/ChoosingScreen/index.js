@@ -1,16 +1,13 @@
 import React, { useState } from "react"
 import "./styles.css"
 
-// functions
-import ToTitle from "../../functions/ToTitle"
-
-// assets
+// ASSETS
 import watcherImage from "../../assets/images/machines/watcher.webp"
 import striderImage from "../../assets/images/machines/strider.webp"
 import scrapperImage from "../../assets/images/machines/scrapper.webp"
 import grazerImage from "../../assets/images/machines/grazer.webp"
 
-// components
+// COMPONENTS
 import Machine from "./components/RenderMachine"
 import PlayerButton from "./components/PlayerButton"
 import FightButton from "./components/FightButton"
@@ -32,7 +29,6 @@ function ChoosingScreen({ setGameState }) {
                 <div className="choosing-players-area">
                     {
                         RenderMachines(
-                            choosingMachine, // deveria ficar lá
                             playerSet,
                             P1,
                             P2,
@@ -75,7 +71,6 @@ function ChoosingScreen({ setGameState }) {
 }
 
 const RenderMachines = (
-    choosingMachine,
     playerSet,
     P1,
     P2,
@@ -86,7 +81,6 @@ const RenderMachines = (
 ) => {
     return [...Array(machinesList.length)].map((_, i) => (
         <Machine
-            choosingMachine={ choosingMachine }
             playerSet={ playerSet }
             P1={ P1 }
             P2={ P2 }
@@ -98,26 +92,6 @@ const RenderMachines = (
             iconImage={ iconsList != null ? iconsList[i][1] : null }
         />
     ))
-}
-
-const choosingMachine = (playerSet, P1, setP1, P2, SetP2, machine) => {
-    if (playerSet === 1) {
-        if (machine === P2) {
-            alert(`${ ToTitle(machine) } já foi escolhido pelo jogador 2!`)
-        } else {
-            if (machine !== P1) {
-                setP1(machine)
-            }
-        }
-    } else {
-        if (machine === P1){
-            alert(`${ ToTitle(machine) } já foi escolhido pelo jogador 1!`)
-        } else {
-            if (machine !== P2) {
-                SetP2(machine)
-            }
-        }
-    }
 }
 
 export default ChoosingScreen

@@ -1,8 +1,9 @@
 import React from "react"
 import "./styles.css"
 
+import ToTitle from "../../../../functions/ToTitle"
+
 function Machine({
-    choosingMachine,
     playerSet,
     P1,
     P2,
@@ -32,6 +33,26 @@ function Machine({
             <p>{ machineName }</p>
         </div>
     )
+}
+
+const choosingMachine = (playerSet, P1, setP1, P2, SetP2, machine) => {
+    if (playerSet === 1) {
+        if (machine === P2) {
+            alert(`${ ToTitle(machine) } já foi escolhido pelo jogador 2!`)
+        } else {
+            if (machine !== P1) {
+                setP1(machine)
+            }
+        }
+    } else {
+        if (machine === P1){
+            alert(`${ ToTitle(machine) } já foi escolhido pelo jogador 1!`)
+        } else {
+            if (machine !== P2) {
+                SetP2(machine)
+            }
+        }
+    }
 }
 
 const RenderClass = (machineName) => {
