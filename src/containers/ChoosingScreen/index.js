@@ -90,6 +90,7 @@ const RenderMachines = (
             machineImage={ machinesList[i][1] }
             iconName={ iconsList != null ? iconsList[i][0] : null }
             iconImage={ iconsList != null ? iconsList[i][1] : null }
+            key={ i }
         />
     ))
 }
