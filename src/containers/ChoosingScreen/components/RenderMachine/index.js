@@ -13,13 +13,14 @@ function Machine({
     machineName,
     machineImage = null,
     iconName = null,
-    iconImage = null
+    iconImage = null,
+    isP2Machine,
 }) {
     return (
         <div
             className="choosing-player"
             onClick={ () => {
-                choosingMachine(playerSet, P1, SetP1, P2, SetP2, machineName)
+                choosingMachine(playerSet, P1, SetP1, P2, SetP2, machineName, isP2Machine)
             }}
         >
             <div
@@ -36,10 +37,10 @@ function Machine({
     )
 }
 
-const choosingMachine = (playerSet, P1, setP1, P2, SetP2, machine) => {
+const choosingMachine = (playerSet, P1, setP1, P2, SetP2, machine, isP2Machine) => {
     if (playerSet === 1) {
         if (machine === P2) {
-            alert(`${ ToTitle(machine) } já foi escolhido pelo jogador 2!`)
+            alert(`${ ToTitle(machine) } já foi escolhido pelo ${ isP2Machine ? "computador" : "jogador 2"}!`)
         } else {
             if (machine !== P1) {
                 setP1(machine)

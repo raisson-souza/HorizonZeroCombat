@@ -16,12 +16,15 @@
 
         .computer-icon {
             grid-area: computer;
-            border: 2px black solid;
             height: fit-content;
             width: fit-content;
             padding: 3px;
             margin-right: 10px;
             border-radius: 60%;
+
+            &:hover {
+                scale: 1.2;
+            }
         }
 
         #choosing-player {

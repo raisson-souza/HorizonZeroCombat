@@ -19,6 +19,21 @@ function ChoosingScreen({ setGameState }) {
     const [ playerSet, setPlayer ] = useState(1)
     const [ P1, SetP1 ] = useState('')
     const [ P2, SetP2 ] = useState('')
+    const [ isP2Machine, setIsP2Machine ] = useState(false)
+
+    const machinesList = [
+        "watcher",
+        "strider",
+        "scrapper",
+        "grazer",
+    ]
+
+    const machinesAndPathsList = [
+        ["watcher", WatcherImage],
+        ["strider", StriderImage],
+        ["scrapper", ScrapperImage],
+        ["grazer", GrazerImage],
+    ]
 
     return (
         <div className="choosing-box">
@@ -37,12 +52,8 @@ function ChoosingScreen({ setGameState }) {
                             P2,
                             SetP1,
                             SetP2,
-                            [
-                                ["watcher", WatcherImage],
-                                ["strider", StriderImage],
-                                ["scrapper", ScrapperImage],
-                                ["grazer", GrazerImage],
-                            ],
+                            machinesAndPathsList,
+                            isP2Machine,
                         )
                     }
                 </div>
@@ -56,7 +67,12 @@ function ChoosingScreen({ setGameState }) {
                 <MachineButton
                     playerSet={ playerSet }
                     setPlayer={ setPlayer }
-                    player={ P2 }
+                    P2={ P2 }
+                    SetP2={ SetP2 }
+                    isP2Machine={ isP2Machine }
+                    setIsP2Machine={ setIsP2Machine }
+                    P1={ P1 }
+                    machinesList={ machinesList }
                 />
                 <div className="choosing-footer-area">
                     <FightButton
@@ -77,6 +93,7 @@ const RenderMachines = (
     SetP1,
     SetP2,
     machinesList,
+    isP2Machine,
     iconsList = null,
 ) => {
     return [...Array(machinesList.length)].map((_, i) => (
@@ -90,6 +107,7 @@ const RenderMachines = (
             machineImage={ machinesList[i][1] }
             iconName={ iconsList != null ? iconsList[i][0] : null }
             iconImage={ iconsList != null ? iconsList[i][1] : null }
+            isP2Machine={ isP2Machine }
             key={ i }
         />
     ))

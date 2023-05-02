@@ -14,12 +14,14 @@
 }
 .choosing-p2 .choosing-p2-box .computer-icon {
   grid-area: computer;
-  border: 2px black solid;
   height: fit-content;
   width: fit-content;
   padding: 3px;
   margin-right: 10px;
   border-radius: 60%;
+}
+.choosing-p2 .choosing-p2-box .computer-icon:hover {
+  scale: 1.2;
 }
 .choosing-p2 .choosing-p2-box #choosing-player {
   grid-area: player;
