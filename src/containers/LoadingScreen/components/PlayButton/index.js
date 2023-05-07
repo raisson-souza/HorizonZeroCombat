@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import "./styles.css"
 
 // FUNCTIONS
-import StopAudio from "../../../../functions/AloysAudio/StopAudio"
+import PlayAudio from "../../../../functions/AloysAudio/PlayAudio"
 
 // ASSETS
 import { PlayArrowIconSvg } from "../../../../assets/index"
@@ -29,7 +29,7 @@ function PlayButton({ setGameState }) {
 }
 
 const StartBattle = (setGameState) => {
-    StopAudio()
+    PlayAudio()
     setGameState("choosing")
 }
 

@@ -31,6 +31,7 @@ export default function AloysThemeSongSnackbar({ gameState }) {
 }
 
 const ActivateSnackbar = (gameState) => {
-    if (gameState === "home" || gameState === "loading") return true
-    return false
+    const screens = ['home', 'loading', 'choosing']
+
+    return screens.includes(gameState)
 }

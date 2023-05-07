@@ -1,5 +1,8 @@
 import React from "react"
 
+// FUNCTIONS
+import StopAudio from "../../../../functions/AloysAudio/StopAudio"
+
 function FightButton({
     P1,
     P2,
@@ -18,6 +21,7 @@ const startFight = (P1, P2, setGameState) => {
     } else if (P2 === "") {
         alert("Jogador 2 não escolheu uma máquina!")
     } else {
+        StopAudio()
         setTimeout(() => {
             setGameState("battle")
         }, 1000)
