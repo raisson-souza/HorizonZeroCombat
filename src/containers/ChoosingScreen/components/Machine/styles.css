@@ -1,6 +1,7 @@
 .choosing-player {
   height: 350px;
   width: 300px;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -8,7 +9,20 @@
   font-size: 24px;
   cursor: pointer;
 }
-.choosing-player p {
+.choosing-player .choosing-player-config {
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+  width: 250px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.choosing-player .choosing-player-config:hover {
+  height: 350px;
+  width: 300px;
+}
+.choosing-player #machine-name {
   font-family: "Josefin Sans", sans-serif;
   background-color: rgb(81, 81, 81);
   padding: 10px;

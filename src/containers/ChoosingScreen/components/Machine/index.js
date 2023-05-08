@@ -4,6 +4,9 @@ import "./styles.css"
 // FUNCTIONS
 import ToTitle from "../../../../functions/ToTitle"
 
+// COMPONENTS
+import PlayerPossesion from "../PlayerPossession"
+
 function Machine({
     playerSet,
     P1,
@@ -32,9 +35,33 @@ function Machine({
             >
                 { RenderIcon(iconName, iconImage) }
             </div>
-            <p>{ machineName }</p>
+            <p id="machine-name">{ machineName }</p>
+            {
+                renderMachinePossesion(P1, P2, machineName, isP2Machine)
+            }
         </div>
     )
+}
+
+const renderMachinePossesion = (P1, P2, machineName, isP2Machine) => {
+    if (P1 === machineName) {
+        return (
+            <PlayerPossesion
+                playerNumber={ 1 }
+            />
+        )
+    }
+    else if (P2 === machineName){
+        return (
+            <PlayerPossesion
+                playerNumber={ 2 }
+                isMachine={ isP2Machine }
+            />
+        )
+    }
+    else {
+        return null
+    }
 }
 
 const choosingMachine = (playerSet, P1, setP1, P2, SetP2, machine, isP2Machine) => {

@@ -86,17 +86,4 @@
   100% {
     transform: scale(1, 1) rotate(-35deg);
   }
-}
-.choosing-player-config {
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 300px;
-  width: 250px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-}
-.choosing-player-config:hover {
-  height: 350px;
-  width: 300px;
 }/*# sourceMappingURL=styles.css.map */

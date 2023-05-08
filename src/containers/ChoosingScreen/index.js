@@ -10,7 +10,7 @@ import {
 } from "../../assets/index"
 
 // COMPONENTS
-import Machine from "./components/RenderMachine"
+import Machine from "./components/Machine"
 import PlayerButton from "./components/PlayerButton"
 import MachineButton from "./components/MachineButton"
 import FightButton from "./components/FightButton"

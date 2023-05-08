@@ -1,0 +1,30 @@
+.choosing-possession {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  background-color: rgb(38, 73, 178);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 30px;
+}
+.choosing-possession:hover {
+  scale: 1.1;
+}
+
+.choosing-possession-player {
+  transform: translate(0px, -20px);
+  height: 40px;
+  width: 45px;
+}
+
+.choosing-possession-machine {
+  transform: translate(40px, -20px);
+  height: 40px;
+  width: 150px;
+}
+.choosing-possession-machine p {
+  font-size: 19px;
+}/*# sourceMappingURL=styles.css.map */
