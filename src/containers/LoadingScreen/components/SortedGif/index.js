@@ -1,5 +1,9 @@
+import "./styles.css"
+
+// COMPONENTS
 import RandomNumber from "../../../../functions/RandomNumber"
 
+// ASSETS
 import {
     MachineAttacking1Gif,
     MachineAttacking2Gif,
