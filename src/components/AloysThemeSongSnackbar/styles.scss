@@ -28,3 +28,16 @@
     display: none !important;
     background-color: transparent !important;
 }
+
+@media (max-width: 1250px){
+    .app-snackbar {
+        left: 10%;
+    }
+}
+
+@media (max-width: 650px){
+    .app-snackbar {
+        left: 20%;
+        width: 75vw;        
+    }
+}
