@@ -4,10 +4,10 @@ import "./styles.css"
 // COMPONENTS
 import LoadingBar from "../../../../components/LoadingBar"
 
-function LoadingComponent({ barCount }) {
+function LoadingComponent({ barCount, barMax }) {
     return (
         <div className="loading-bar-progress">
-            <LoadingBar level={ barCount } />
+            <LoadingBar level={ barCount } max={ barMax } />
             <p>Carregando...</p>
         </div>
     )
