@@ -3,6 +3,7 @@ import "./styles.css"
 
 // FUNCTIONS
 import ToTitle from "../../../../functions/ToTitle"
+import Capitalize from "../../../../functions/Capitalize"
 
 // COMPONENTS
 import PlayerPossesion from "../PlayerPossession"
@@ -35,7 +36,7 @@ function Machine({
             >
                 { RenderIcon(iconName, iconImage) }
             </div>
-            <p id="machine-name">{ machineName }</p>
+            <p id="machine-name">{ Capitalize(machineName) }</p>
             {
                 renderMachinePossesion(P1, P2, machineName, isP2Machine)
             }
