@@ -19,8 +19,7 @@
   justify-content: flex-end;
 }
 .choosing-player .choosing-player-config:hover {
-  height: 350px;
-  width: 300px;
+  scale: 1.3;
 }
 .choosing-player #machine-name {
   font-family: "Josefin Sans", sans-serif;

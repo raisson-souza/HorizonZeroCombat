@@ -40,6 +40,7 @@ function ChoosingScreen({ setGameState }) {
             <header className="choosing-header">
                 Horizon Zero Combat
             </header>
+            <div className="choosing-header-fake"></div>
             <div className="choosing-players-box">
                 <div className="choosing-players-messgage">
                     Escolha sua<br />Máquina
