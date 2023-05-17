@@ -1,9 +1,4 @@
 .loading-play {
-  position: absolute;
-  z-index: 1;
-  top: 85%;
-  left: 50%;
-  transform: translate(-50px, -50px);
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
