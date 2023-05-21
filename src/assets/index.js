@@ -22,21 +22,27 @@ import MachineWalking1Gif from "./gifs/machine_walking.gif"
 import MachineWalking2Gif from "./gifs/machine_walking2.gif"
 
 // ICONS
+import BrokenSwordIcon from "./icons/broken_sword.png"
+import BrokenTestTubeIcon from "./icons/broken_test_tube.png"
+import MarkedTestTubeIcon from "./icons/marked_test_tube.png"
+import StunIcon from "./icons/stun_icon.png"
+import SwordIcon from "./icons/sword_icon.png"
 
 // IMAGES
+// MACHINES
 import GrazerImage from "./images/machines/grazer.webp"
 import ScrapperImage from "./images/machines/scrapper.webp"
 import StriderImage from "./images/machines/strider.webp"
 import WatcherImage from "./images/machines/watcher.webp"
 
+// MACHINES BACKGROUND
 import GrazerBackgroundImage from "./images/machines_background/grazer_background.webp"
 import ScrapperBackgroundImage from "./images/machines_background/scrapper_background.webp"
 import StriderBackgroundImage from "./images/machines_background/scrapper_background.webp"
 import WatcherBackgroundImage from "./images/machines_background/watcher_background.webp"
 
-import HorizonZeroDawnWallpaperImage from "./images/wallpapers/horizon-zero-dawn-wallpaper.jpg"
-
-import SwordIconImage from "./images/others/SwordIcon.png"
+// WALLPAPERS
+import HorizonZeroDawnWallpaperImage from "./images/wallpapers/horizon_zero_dawn_wallpaper.jpg"
 
 // SVG
 import ComputerIconSvg from "./svg/ComputerIcon"
@@ -65,6 +71,11 @@ export {
     MachineAttacking3Gif,
     MachineWalking1Gif,
     MachineWalking2Gif,
+    BrokenSwordIcon,
+    BrokenTestTubeIcon,
+    MarkedTestTubeIcon,
+    StunIcon,
+    SwordIcon,
     GrazerImage,
     ScrapperImage,
     StriderImage,
@@ -74,7 +85,6 @@ export {
     StriderBackgroundImage,
     WatcherBackgroundImage,
     HorizonZeroDawnWallpaperImage,
-    SwordIconImage,
     ComputerIconSvg,
     InfoIconSvg,
     PlayArrowIconSvg,
