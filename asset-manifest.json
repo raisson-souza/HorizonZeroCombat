@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/HorizonZeroCombat/static/css/main.98a77133.css",
+    "main.js": "/HorizonZeroCombat/static/js/main.35813054.js",
+    "static/media/aloys_theme.mp3": "/HorizonZeroCombat/static/media/aloys_theme.e85c3becb547f13d3388.mp3",
+    "static/media/horizon_zero_dawn.gif": "/HorizonZeroCombat/static/media/horizon_zero_dawn.6525475d9b02d26ea18a.gif",
+    "static/media/aloy.gif": "/HorizonZeroCombat/static/media/aloy.caaf92d7035a1d944051.gif",
+    "static/media/machine_attacking2.gif": "/HorizonZeroCombat/static/media/machine_attacking2.fd39990f2f9362f5599e.gif",
+    "static/media/machine_attacking.gif": "/HorizonZeroCombat/static/media/machine_attacking.49431c0491e1e9640255.gif",
+    "static/media/machine_attacking3.gif": "/HorizonZeroCombat/static/media/machine_attacking3.f3b72c9d3c0b4615f247.gif",
+    "static/media/machine_walking.gif": "/HorizonZeroCombat/static/media/machine_walking.f010deecff57e686a17d.gif",
+    "static/media/machine_death_hit.wav": "/HorizonZeroCombat/static/media/machine_death_hit.e2faa3c21a268f905d98.wav",
+    "static/media/machine_walking2.gif": "/HorizonZeroCombat/static/media/machine_walking2.a4f00dbe814d28d291a7.gif",
+    "static/media/glitch.wav": "/HorizonZeroCombat/static/media/glitch.96ac6078d8ef0601a612.wav",
+    "static/media/machine_death2.wav": "/HorizonZeroCombat/static/media/machine_death2.03051330869feb5843d6.wav",
+    "static/media/machine_wound.wav": "/HorizonZeroCombat/static/media/machine_wound.01768d114e0331e6c05a.wav",
+    "static/media/cancelled_action.wav": "/HorizonZeroCombat/static/media/cancelled_action.b1921f571e5976b70850.wav",
+    "static/media/horizon-zero-dawn-wallpaper.jpg": "/HorizonZeroCombat/static/media/horizon-zero-dawn-wallpaper.1114fba815da668eb4bf.jpg",
+    "static/media/level_up.wav": "/HorizonZeroCombat/static/media/level_up.e0a5f7555b339b9bec67.wav",
+    "static/media/machine_death.wav": "/HorizonZeroCombat/static/media/machine_death.7ebf8a8fc00b5d6e2bf5.wav",
+    "static/media/energy_boost.wav": "/HorizonZeroCombat/static/media/energy_boost.edd8643690ad1dc17cf1.wav",
+    "static/media/machine_wound2.wav": "/HorizonZeroCombat/static/media/machine_wound2.ec530168190110448115.wav",
+    "static/media/scrapper_background.webp": "/HorizonZeroCombat/static/media/scrapper_background.9f37f7c8a2a63be70836.webp",
+    "static/media/scrapper.webp": "/HorizonZeroCombat/static/media/scrapper.30fcb406ee1cff72d133.webp",
+    "static/media/watcher_background.webp": "/HorizonZeroCombat/static/media/watcher_background.e3bbe42a8b7a604c07d0.webp",
+    "static/media/game_start.mp3": "/HorizonZeroCombat/static/media/game_start.31f371aa54d6099a48e0.mp3",
+    "static/media/strider.webp": "/HorizonZeroCombat/static/media/strider.2108d4a4965d14335b0e.webp",
+    "static/media/machine_wound3.mp3": "/HorizonZeroCombat/static/media/machine_wound3.3fa5708a92fdc0f7cc59.mp3",
+    "static/media/watcher.webp": "/HorizonZeroCombat/static/media/watcher.4922a0ea475719c0a093.webp",
+    "static/media/grazer_background.webp": "/HorizonZeroCombat/static/media/grazer_background.aaafb431f2165fc3755c.webp",
+    "static/media/grazer.webp": "/HorizonZeroCombat/static/media/grazer.636725a6fa927367c769.webp",
+    "index.html": "/HorizonZeroCombat/index.html",
+    "main.98a77133.css.map": "/HorizonZeroCombat/static/css/main.98a77133.css.map",
+    "main.35813054.js.map": "/HorizonZeroCombat/static/js/main.35813054.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.98a77133.css",
+    "static/js/main.35813054.js"
+  ]
+}
