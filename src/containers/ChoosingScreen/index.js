@@ -7,6 +7,10 @@ import {
     StriderImage,
     ScrapperImage,
     GrazerImage,
+    MarkedTestTubeIcon,
+    StunIcon,
+    BrokenTestTubeIcon,
+    BrokenSwordIcon,
 } from "../../assets/index"
 
 // COMPONENTS
@@ -35,6 +39,13 @@ function ChoosingScreen({ setGameState }) {
         ["grazer", GrazerImage],
     ]
 
+    const iconsList = [
+        ["Lock Biofuel", MarkedTestTubeIcon],
+        ["Stun", StunIcon],
+        ["Damage Biofuel", BrokenTestTubeIcon],
+        ["Disable Attack", BrokenSwordIcon]
+    ]
+
     return (
         <div className="choosing-box">
             <header className="choosing-header">
@@ -55,6 +66,7 @@ function ChoosingScreen({ setGameState }) {
                             SetP2,
                             machinesAndPathsList,
                             isP2Machine,
+                            iconsList,
                         )
                     }
                 </div>
@@ -95,7 +107,7 @@ const RenderMachines = (
     SetP2,
     machinesList,
     isP2Machine,
-    iconsList = null,
+    iconsList,
 ) => {
     return [...Array(machinesList.length)].map((_, i) => (
         <Machine

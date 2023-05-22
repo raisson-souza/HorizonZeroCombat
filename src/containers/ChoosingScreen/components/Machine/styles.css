@@ -18,6 +18,10 @@
   align-items: flex-end;
   justify-content: flex-end;
 }
+.choosing-player .choosing-player-config img {
+  border: 2px black solid;
+  border-radius: 30px;
+}
 .choosing-player .choosing-player-config:hover {
   scale: 1.3;
 }

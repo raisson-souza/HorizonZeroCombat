@@ -7,6 +7,7 @@ import Capitalize from "../../../../functions/Capitalize"
 
 // COMPONENTS
 import PlayerPossesion from "../PlayerPossession"
+import { Tooltip } from "react-tooltip"
 
 function Machine({
     playerSet,
@@ -20,6 +21,7 @@ function Machine({
     iconImage = null,
     isP2Machine,
 }) {
+
     return (
         <div
             className="choosing-player"
@@ -34,9 +36,13 @@ function Machine({
                     backgroundSize: RenderMachineSize(machineName),
                 } }
             >
-                { RenderIcon(iconName, iconImage) }
+                { 
+                    RenderIcon(iconName, iconImage)
+                }
             </div>
-            <p id="machine-name">{ Capitalize(machineName) }</p>
+            <p id="machine-name">
+                { Capitalize(machineName) }
+            </p>
             {
                 renderMachinePossesion(P1, P2, machineName, isP2Machine)
             }
@@ -103,8 +109,27 @@ const RenderClass = (machineName) => {
 const RenderIcon = (iconName, iconImage) => {
     if (iconName == null) return null
 
+    const HandleCLick = e => {
+        e.preventDefault()
+        e.stopPropagation()
+    }
+
     return (
-        <img src={ iconImage } height="20px" alt={ `${ iconName }-icon`} />
+        <>
+            <a
+                data-tooltip-content={ iconName }
+                data-tooltip-id={ iconName }
+                href=" "
+                onClick={ (e) => { HandleCLick(e) }}
+            >
+                <img
+                    src={ iconImage }
+                    height="40px"
+                    alt={ `${ iconName }-icon` }
+                />
+            </a>
+            <Tooltip id={ iconName } />
+        </>
     )
 }
 
