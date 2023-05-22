@@ -10,7 +10,7 @@ import RandomNumber from "../../../../functions/RandomNumber"
 import { ComputerIconSvg } from "../../../../assets/index"
 
 // COMPONENTS
-import { Tooltip } from "react-tooltip"
+import TooltipComponent from "../../../../components/TooltipComponent"
 
 function MachineButton({
     playerSet,
@@ -55,19 +55,17 @@ function MachineButton({
 
 const ComputerIconAndTootip = ({ isP2Machine, color }) => {
     return (
-        <>
-            <a
-                data-tooltip-content="Jogar contra o computador"
-                data-tooltip-id="computer-icon-tooltip"
-                href=" "
-                onClick={ (e) => { e.preventDefault() } }
-            >
+        <TooltipComponent
+            text="Jogar contra o computador"
+            id="computer-icon-tooltip"
+            fontSize={ 15 }
+            arrow={ false }
+            content={
                 <ComputerIconSvg
                     fill={ isP2Machine ? color : "black" }
                 />
-            </a>
-            <Tooltip id="computer-icon-tooltip" />
-        </>
+            }
+        />
     )
 }
 

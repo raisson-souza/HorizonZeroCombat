@@ -7,7 +7,7 @@ import Capitalize from "../../../../functions/Capitalize"
 
 // COMPONENTS
 import PlayerPossesion from "../PlayerPossession"
-import { Tooltip } from "react-tooltip"
+import TooltipComponent from "../../../../components/TooltipComponent"
 
 function Machine({
     playerSet,
@@ -115,21 +115,20 @@ const RenderIcon = (iconName, iconImage) => {
     }
 
     return (
-        <>
-            <a
-                data-tooltip-content={ iconName }
-                data-tooltip-id={ iconName }
-                href=" "
-                onClick={ (e) => { HandleCLick(e) }}
-            >
+        <TooltipComponent
+            text={ iconName }
+            id={ iconName }
+            arrow={ false }
+            fontSize={ 16 }
+            onClick={ (e) => { HandleCLick(e) } }
+            content={
                 <img
                     src={ iconImage }
                     height="40px"
                     alt={ `${ iconName }-icon` }
                 />
-            </a>
-            <Tooltip id={ iconName } />
-        </>
+            }
+        />
     )
 }
 
