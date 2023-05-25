@@ -1,0 +1,28 @@
+.modal-component {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 17;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+
+    .modal-component-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+
+        .modal-component-close-icon {
+            height: fit-content;
+            width: fit-content;
+            display: flex;
+            border: 1px black solid; // FIX nao gostei
+        }
+    }
+
+    .modal-component-content {
+        padding: 10px;
+    }
+}

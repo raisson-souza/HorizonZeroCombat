@@ -20,6 +20,7 @@ function Machine({
     iconName = null,
     iconImage = null,
     isP2Machine,
+    setModalIsOpen,
 }) {
 
     return (
@@ -37,7 +38,7 @@ function Machine({
                 } }
             >
                 { 
-                    RenderIcon(iconName, iconImage)
+                    RenderIcon(iconName, iconImage, setModalIsOpen)
                 }
             </div>
             <p id="machine-name">
@@ -106,12 +107,13 @@ const RenderClass = (machineName) => {
     }
 }
 
-const RenderIcon = (iconName, iconImage) => {
+const RenderIcon = (iconName, iconImage, setModalIsOpen) => {
     if (iconName == null) return null
 
     const HandleCLick = e => {
         e.preventDefault()
         e.stopPropagation()
+        setModalIsOpen(true)
     }
 
     return (

@@ -50,6 +50,7 @@ import InfoIconSvg from "./svg/InfoIcon"
 import PlayArrowIconSvg from "./svg/PlayArrow"
 import PlayCircleIconSvg from "./svg/PlayCircle"
 import ShieldIconSvg from "./svg/ShieldIcon"
+import CloseIcon from "./svg/CloseIcon"
 
 export {
     AloysThemeAudio,
@@ -90,4 +91,5 @@ export {
     PlayArrowIconSvg,
     PlayCircleIconSvg,
     ShieldIconSvg,
+    CloseIcon,
 }
