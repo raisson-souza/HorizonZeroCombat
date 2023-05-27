@@ -22,9 +22,8 @@ import ModalComponent from "../../components/ModalComponent"
 
 // MODALS
 import Modals from "./modals"
-import BackgroundModalComponent from "../../components/BackgroundModalComponent"
 
-function ChoosingScreen({ setGameState }) {
+function ChoosingScreen({ setGameState, setBackgroundActive }) {
     const [ playerSet, setPlayer ] = useState(1)
     const [ P1, SetP1 ] = useState('')
     const [ P2, SetP2 ] = useState('')
@@ -34,10 +33,11 @@ function ChoosingScreen({ setGameState }) {
     const [ machine2Modal, setMachine2Modal ] = useState(false)
     const [ machine3Modal, setMachine3Modal ] = useState(false)
     const [ machine4Modal, setMachine4Modal ] = useState(false)
-    const [ modalComponentBlock, setModalComponentBlock ] = useState(false)
 
     useEffect(() => {
-        setModalComponentBlock(machine1Modal || machine2Modal || machine3Modal || machine4Modal)
+        // FIX dependency array
+        // FIX all fixes
+        setBackgroundActive(machine1Modal || machine2Modal || machine3Modal || machine4Modal)
     }, [machine1Modal, machine2Modal, machine3Modal, machine4Modal])
 
     const modalsStatesList = [
@@ -67,15 +67,9 @@ function ChoosingScreen({ setGameState }) {
         ["Damage Biofuel", BrokenTestTubeIcon],
         ["Disable Attack", BrokenSwordIcon],
     ]
-    // FIX - background no APP, passa o setState p os comps controlarem
 
     return (
         <>
-            {/* FIX criar um render para só renderizar se existir um modal ativado */}
-            <BackgroundModalComponent
-                modalsStatesList={ modalsStatesList }
-                isActive={ modalComponentBlock }
-            />
             { RenderModals(Modals, modalsStatesList) }
             <div className="choosing-box">
                 <header className="choosing-header">
@@ -160,31 +154,29 @@ const RenderMachines = (
     ))
 }
 
-// verificar se esta renderizando pra nao gerar múltiplos
 const RenderModals = (modalsList = [], modalsStatesList = []) => {
     return [...Array(modalsList.map((_, i) => (
         modalsStatesList[i][0]
             ? (
-                ModalComponent(
-                    modalsList[i][0],
-                    modalsList[i][1],
-                    modalsList[i][2],
-                    modalsStatesList[i][0],
-                    modalsStatesList[i][1],
-                    modalsList[i][3],
-                    modalsList[i][4],
-                    modalsList[i][5],
-                    modalsList[i][6],
-                    modalsList[i][7],
-                    modalsList[i][8],
-                    modalsList[i][9],
-                    i,
-                )
+                <ModalComponent
+                    title={ modalsList[i][0] }
+                    modalId={ modalsList[i][1] }
+                    modalKey={ i + 1 }
+                    content={ modalsList[i][2] }
+                    isOpen={ modalsStatesList[i][0] }
+                    setIsOpen={ modalsStatesList[i][1] }
+                    height={ modalsList[i][3] }
+                    width={ modalsList[i][4] }
+                    backgroundColor={ modalsList[i][5] }
+                    headerBackgroundColor={ modalsList[i][6] }
+                    textFontSize={ modalsList[i][7] }
+                    textColor={ modalsList[i][8] }
+                    hasCloseButton={ modalsList[i][9] }
+                    key={ i }
+                />
             )
             : null
     )))]
 }
-
-const RenderModalBackground = (modalsStatesList, isActive)
 
 export default ChoosingScreen

@@ -2,9 +2,10 @@ import "./styles.css"
 
 import { CloseIcon } from "../../assets"
 
-function ModalComponent(
+function ModalComponent({
     title,
     modalId,
+    modalKey,
     content = <></>,
     isOpen = false,
     setIsOpen = () => {},
@@ -16,20 +17,20 @@ function ModalComponent(
     textColor = 'white',
     hasCloseButton = true,
     closeOnOutsideClick = true,
-    key,
-) {
-    // FIX variavel se for da choosingscreen para parar e tocar o audio da aloy
+}) {
+    // FIX variavel se for da choosingscreen para parar e tocar o audio da aloy 
+    // FIX verificar necessidade da KEY nesse componente
     return (
         <div
             className="modal-component"
             id={ modalId }
+            key={ modalKey }
             style={ {
                 display: isOpen ? 'auto' : 'none',
                 height: height,
                 width: width,
                 backgroundColor: backgroundColor,
             } }
-            key={ key }
         >
             <div
                 className="modal-component-header"

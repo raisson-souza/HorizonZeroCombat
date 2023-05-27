@@ -18,6 +18,7 @@
   width: fit-content;
   display: flex;
   border: 1px black solid;
+  border-radius: 15px;
 }
 .modal-component .modal-component-content {
   padding: 10px;
