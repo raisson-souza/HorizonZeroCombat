@@ -35,9 +35,8 @@ function ChoosingScreen({ setGameState, setBackgroundActive }) {
     const [ machine4Modal, setMachine4Modal ] = useState(false)
 
     useEffect(() => {
-        // FIX dependency array
-        // FIX all fixes
         setBackgroundActive(machine1Modal || machine2Modal || machine3Modal || machine4Modal)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [machine1Modal, machine2Modal, machine3Modal, machine4Modal])
 
     const modalsStatesList = [
@@ -161,7 +160,6 @@ const RenderModals = (modalsList = [], modalsStatesList = []) => {
                 <ModalComponent
                     title={ modalsList[i][0] }
                     modalId={ modalsList[i][1] }
-                    modalKey={ i + 1 }
                     content={ modalsList[i][2] }
                     isOpen={ modalsStatesList[i][0] }
                     setIsOpen={ modalsStatesList[i][1] }
@@ -172,6 +170,7 @@ const RenderModals = (modalsList = [], modalsStatesList = []) => {
                     textFontSize={ modalsList[i][7] }
                     textColor={ modalsList[i][8] }
                     hasCloseButton={ modalsList[i][9] }
+                    closeOnOutsideClick={ modalsList[i][10] }
                     key={ i }
                 />
             )

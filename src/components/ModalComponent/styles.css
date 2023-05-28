@@ -2,8 +2,12 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  z-index: 17;
+  z-index: 11;
   transform: translate(-50%, -50%);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   display: flex;
   flex-direction: column;
 }
@@ -12,12 +16,16 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.modal-component .modal-component-header p {
+  padding-left: 10px;
 }
 .modal-component .modal-component-header .modal-component-close-icon {
   height: fit-content;
   width: fit-content;
   display: flex;
-  border: 1px black solid;
   border-radius: 15px;
 }
 .modal-component .modal-component-content {

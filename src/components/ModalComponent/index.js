@@ -1,11 +1,12 @@
+import { useEffect } from "react"
 import "./styles.css"
 
+// ASSETS
 import { CloseIcon } from "../../assets"
 
 function ModalComponent({
     title,
     modalId,
-    modalKey,
     content = <></>,
     isOpen = false,
     setIsOpen = () => {},
@@ -18,13 +19,18 @@ function ModalComponent({
     hasCloseButton = true,
     closeOnOutsideClick = true,
 }) {
-    // FIX variavel se for da choosingscreen para parar e tocar o audio da aloy 
-    // FIX verificar necessidade da KEY nesse componente
+    useEffect(() => {
+        const node = document.getElementById("modal-component-background")
+
+        try {
+            node.addEventListener("click", () => { handleOutsideClick(closeOnOutsideClick, setIsOpen) })
+        } catch { }
+    })
+
     return (
         <div
             className="modal-component"
             id={ modalId }
-            key={ modalKey }
             style={ {
                 display: isOpen ? 'auto' : 'none',
                 height: height,
@@ -66,7 +72,12 @@ const RenderCloseIcon = (setIsOpen) => {
             />
         </div>
     )
+}
 
+const handleOutsideClick = (closeOnOutsideClick, setIsOpen) => {
+    return closeOnOutsideClick
+        ? setIsOpen(false)
+        : null
 }
 
 export default ModalComponent
