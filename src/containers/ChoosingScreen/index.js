@@ -53,11 +53,11 @@ function ChoosingScreen({ setGameState, setBackgroundActive }) {
         "grazer",
     ]
 
-    const machinesAndPathsList = [
-        ["watcher", WatcherImage],
-        ["strider", StriderImage],
-        ["scrapper", ScrapperImage],
-        ["grazer", GrazerImage],
+    const machinesInfos = [
+        ["watcher", [10, 25, '2/4'], WatcherImage],
+        ["strider", [15, 20, '3/5'], StriderImage],
+        ["scrapper", [20, 15, '4/6'], ScrapperImage],
+        ["grazer", [20, 10, '3/5'], GrazerImage],
     ]
 
     const iconsList = [
@@ -87,7 +87,7 @@ function ChoosingScreen({ setGameState, setBackgroundActive }) {
                                 P2,
                                 SetP1,
                                 SetP2,
-                                machinesAndPathsList,
+                                machinesInfos,
                                 isP2Machine,
                                 iconsList,
                                 modalsStatesList
@@ -130,20 +130,23 @@ const RenderMachines = (
     P2,
     SetP1,
     SetP2,
-    machinesList,
+    machinesInfos,
     isP2Machine,
     iconsList,
     setIsModalsOpen,
 ) => {
-    return [...Array(machinesList.length)].map((_, i) => (
+    return [...Array(machinesInfos.length)].map((_, i) => (
         <Machine
             playerSet={ playerSet }
             P1={ P1 }
             P2={ P2 }
             SetP1={ SetP1 }
             SetP2={ SetP2 }
-            machineName={ machinesList[i][0] }
-            machineImage={ machinesList[i][1] }
+            machineName={ machinesInfos[i][0] }
+            machineImage={ machinesInfos[i][2] }
+            machineLife={ machinesInfos[i][1][0] }
+            machineEnergy={ machinesInfos[i][1][1] }
+            machineAttack={ machinesInfos[i][1][2] }
             iconName={ iconsList != null ? iconsList[i][0] : null }
             iconImage={ iconsList != null ? iconsList[i][1] : null }
             isP2Machine={ isP2Machine }

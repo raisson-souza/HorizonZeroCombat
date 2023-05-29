@@ -17,6 +17,9 @@ function Machine({
     SetP2,
     machineName,
     machineImage = null,
+    machineLife = 0,
+    machineEnergy = 0,
+    machineAttack = '0/0',
     iconName = null,
     iconImage = null,
     isP2Machine,
@@ -41,9 +44,9 @@ function Machine({
                     RenderIcon(iconName, iconImage, setModalIsOpen)
                 }
             </div>
-            <p id="machine-name">
-                { Capitalize(machineName) }
-            </p>
+            {
+                RenderMachineNameAndTraits(machineName, machineLife, machineEnergy, machineAttack)
+            }
             {
                 renderMachinePossesion(P1, P2, machineName, isP2Machine)
             }
@@ -143,6 +146,15 @@ const RenderMachineSize = (machineName) => {
         default:
             return "107%"
     }
+}
+
+const RenderMachineNameAndTraits = (machineName, machineLife, machineEnergy, machineAttack) => {
+    return (
+        <div className="choosing-machine-traits">
+            <p>{ Capitalize(machineName) }</p>
+            <p id="machine-trait-infos">{ machineLife }❤️ | { machineEnergy }🧪 | { machineAttack }🗡️</p>
+        </div>
+    )
 }
 
 export default Machine
