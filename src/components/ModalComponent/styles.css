@@ -21,6 +21,7 @@
 }
 .modal-component .modal-component-header p {
   padding-left: 10px;
+  font-family: "Montserrat", sans-serif;
 }
 .modal-component .modal-component-header .modal-component-close-icon {
   height: fit-content;
