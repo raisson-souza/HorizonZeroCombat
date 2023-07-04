@@ -4,6 +4,7 @@ import "./styles.css"
 // FUNCTIONS
 import ToTitle from "../../../../functions/ToTitle"
 import Capitalize from "../../../../functions/Capitalize"
+import CreateSnackbar from "../../../../functions/Snackbar/CreateSnackbar"
 
 // COMPONENTS
 import PlayerPossesion from "../PlayerPossession"
@@ -24,13 +25,15 @@ function Machine({
     iconImage = null,
     isP2Machine,
     setModalIsOpen,
+    snackbars = {},
+    setSnackbars = () => {},
 }) {
 
     return (
         <div
             className="choosing-player"
             onClick={ () => {
-                choosingMachine(playerSet, P1, SetP1, P2, SetP2, machineName, isP2Machine)
+                choosingMachine(playerSet, P1, SetP1, P2, SetP2, machineName, isP2Machine, snackbars, setSnackbars)
             }}
         >
             <div
@@ -75,10 +78,22 @@ const renderMachinePossesion = (P1, P2, machineName, isP2Machine) => {
     }
 }
 
-const choosingMachine = (playerSet, P1, setP1, P2, SetP2, machine, isP2Machine) => {
+const choosingMachine = (playerSet, P1, setP1, P2, SetP2, machine, isP2Machine, snackbars, setSnackbars) => {
     if (playerSet === 1) {
         if (machine === P2) {
-            alert(`${ ToTitle(machine) } já foi escolhido pelo ${ isP2Machine ? "computador" : "jogador 2"}!`)
+            if (snackbars['MachineAlreadyChoosen'] === undefined)
+                CreateSnackbar(
+                    'MachineAlreadyChoosen',
+                    {
+                        text: `${ ToTitle(machine) } já foi escolhido pelo ${ isP2Machine ? "computador" : "jogador 2"}!`,
+                        autoClose: true,
+                        toCloseSeconds: 4,
+                        closeIcon: false,
+                        type: "warning",
+                        position: "upperLeft"
+                    },
+                    snackbars,
+                    setSnackbars)
         } else {
             if (machine !== P1) {
                 setP1(machine)
@@ -86,7 +101,19 @@ const choosingMachine = (playerSet, P1, setP1, P2, SetP2, machine, isP2Machine) 
         }
     } else {
         if (machine === P1){
-            alert(`${ ToTitle(machine) } já foi escolhido pelo jogador 1!`)
+            if (snackbars['MachineAlreadyChoosen'] === undefined)
+                CreateSnackbar(
+                    'MachineAlreadyChoosen',
+                    {
+                        text: `${ ToTitle(machine) } já foi escolhido pelo jogador 1!`,
+                        autoClose: true,
+                        toCloseSeconds: 4,
+                        closeIcon: false,
+                        type: "warning",
+                        position: "upperLeft"
+                    },
+                    snackbars,
+                    setSnackbars)
         } else {
             if (machine !== P2) {
                 SetP2(machine)

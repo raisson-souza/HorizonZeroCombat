@@ -23,7 +23,7 @@ import ModalComponent from "../../components/ModalComponent"
 // MODALS
 import Modals from "./modals"
 
-function ChoosingScreen({ setGameState, setBackgroundActive }) {
+function ChoosingScreen({ setGameState, setBackgroundActive, snackbars, setSnackbars }) {
     const [ playerSet, setPlayer ] = useState(1)
     const [ P1, SetP1 ] = useState('')
     const [ P2, SetP2 ] = useState('')
@@ -90,7 +90,9 @@ function ChoosingScreen({ setGameState, setBackgroundActive }) {
                                 machinesInfos,
                                 isP2Machine,
                                 iconsList,
-                                modalsStatesList
+                                modalsStatesList,
+                                snackbars,
+                                setSnackbars,
                             )
                         }
                     </div>
@@ -116,6 +118,8 @@ function ChoosingScreen({ setGameState, setBackgroundActive }) {
                             P1={ P1 }
                             P2={ P2 }
                             setGameState={ setGameState }
+                            snackbars={ snackbars }
+                            setSnackbars={ setSnackbars }
                         />
                     </div>
                 </footer>
@@ -134,6 +138,8 @@ const RenderMachines = (
     isP2Machine,
     iconsList,
     setIsModalsOpen,
+    snackbars,
+    setSnackbars,
 ) => {
     return [...Array(machinesInfos.length)].map((_, i) => (
         <Machine
@@ -151,6 +157,8 @@ const RenderMachines = (
             iconImage={ iconsList != null ? iconsList[i][1] : null }
             isP2Machine={ isP2Machine }
             setModalIsOpen={ setIsModalsOpen[i][1] }
+            snackbars={ snackbars }
+            setSnackbars={ setSnackbars }
             key={ i }
         />
     ))
