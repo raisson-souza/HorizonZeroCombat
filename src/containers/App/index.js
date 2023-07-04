@@ -14,18 +14,7 @@ import SnackbarComponent from "../../components/SnackbarComponent"
 function App() {
     const [ gameState, setGameState ] = useState("home")
     const [ backgroundActive, setBackgroundActive ] = useState(false)
-    const [ snackbars, setSnackbars ] = useState({
-        'teste01': [
-            {
-                text: 'teste01',
-                autoClose: false,
-                toCloseSeconds: 0,
-                closeIcon: true,
-            },
-            'ok',
-            'downRight'
-        ]
-    })
+    const [ snackbars, setSnackbars ] = useState({})
 
     return (
         <div className={ gameState !== "home" ? "app-box" : null }>
