@@ -7,7 +7,11 @@ import LoadingComponent from "./components/LoadingComponent"
 import SortedGif from "./components/SortedGif"
 import SortedClue from "./components/SortedClue"
 
-function LoadingScreen({ setGameState }) {
+function LoadingScreen({ props }) {
+    const {
+        setGameState,
+    } = props
+
     const loadingSeconds = (1 * 2) * 10 // (seconds x 2) x 10
     const [ gif, setGif                 ] = useState(1)
     const [ clueNumber, setClueNumber   ] = useState(0)

@@ -16,37 +16,47 @@ function App() {
     const [ backgroundActive, setBackgroundActive ] = useState(false)
     const [ snackbars, setSnackbars ] = useState({})
 
-    return (
-        <div className={ gameState !== "home" ? "app-box" : null }>
-            <AloysThemeSongSnackbar gameState={ gameState }/>
+    // Encapsulamento dos States dentro de Props
+    const props = {
+        gameState: gameState,
+        setGameState: setGameState,
+        backgroundActive: backgroundActive,
+        setBackgroundActive: setBackgroundActive,
+        snackbars: snackbars,
+        setSnackbars: setSnackbars,
+    }
+
+    return ( // ajudar essa div
+        <div 
+            className={ gameState !== "home" ? "app-box" : null }
+        >
+            <AloysThemeSongSnackbar 
+                gameState={ gameState }
+            />
             {
-                RenderBackgroundModalComponent(backgroundActive)
+                RenderBackgroundModalComponent(props)
             }
             {
-                RenderGameScreen(gameState, setGameState, setBackgroundActive, snackbars, setSnackbars)
+                RenderGameScreen(props)
             }
             {
-                RenderSnackbars(snackbars, setSnackbars)
+                RenderSnackbars(props)
             }
         </div>
     )
 }
 
-const RenderGameScreen = (gameState, setGameState, setBackgroundActive, snackbars, setSnackbars) => {
-    switch (gameState) {
+// Renderiza a tela atual do jogo
+const RenderGameScreen = (props) => {
+
+    // Todos os States são passados por dentro de props
+    switch (props.gameState) {
         case "home":
-            return <InitialScreen setGameState={ setGameState } />
+            return <InitialScreen  props={ props } />
         case "loading":
-            return <LoadingScreen setGameState={ setGameState } />
+            return <LoadingScreen  props={ props } />
         case "choosing":
-            return (
-                <ChoosingScreen
-                    setGameState={ setGameState }
-                    setBackgroundActive={ setBackgroundActive }
-                    snackbars={ snackbars }
-                    setSnackbars={ setSnackbars }
-                />
-            )
+            return <ChoosingScreen props={ props } />
         case "battle":
             return <p>TELA DE BATALHA</p>
         case "ending":
@@ -54,12 +64,13 @@ const RenderGameScreen = (gameState, setGameState, setBackgroundActive, snackbar
         case "credits":
             return <p>CRÉDITOS</p>
         default:
-            return <InitialScreen setGameState={ setGameState } />
+            return <InitialScreen  props={ props } />
     }
 }
 
-const RenderBackgroundModalComponent = (backgroundActive) => {
-    return backgroundActive
+// Renderiza o Background de suporte do ModalComponent dos modais das máquinas
+const RenderBackgroundModalComponent = (props) => {
+    return props.backgroundActive
         ? (
             <BackgroundModalComponent
                 isActive={ true }
@@ -68,7 +79,13 @@ const RenderBackgroundModalComponent = (backgroundActive) => {
         : null
 }
 
-const RenderSnackbars = (snackbars, setSnackbars) => {
+// Renderiza as Snackbars presentes na tela
+const RenderSnackbars = (props) => {
+    const {
+        snackbars,
+        setSnackbars,
+    } = props
+
     const components = []
 
     for (let snackbar in snackbars) {

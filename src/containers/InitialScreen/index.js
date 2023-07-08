@@ -7,7 +7,11 @@ import { PlayCircleIconSvg } from "../../assets/index"
 // FUNCTIONS
 import PlayAudio from "../../functions/AloysAudio/PlayAudio"
 
-function InitialScreen({ setGameState }) {
+function InitialScreen({ props }) {
+    const {
+        setGameState,
+    } = props
+
     const [ hover, setHover ] = useState(false)
 
     const gameStart = () => {

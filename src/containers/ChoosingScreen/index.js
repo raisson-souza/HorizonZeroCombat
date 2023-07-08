@@ -23,7 +23,14 @@ import ModalComponent from "../../components/ModalComponent"
 // MODALS
 import Modals from "./modals"
 
-function ChoosingScreen({ setGameState, setBackgroundActive, snackbars, setSnackbars }) {
+function ChoosingScreen({ props }) {
+    const {
+        setGameState,
+        setBackgroundActive,
+        snackbars,
+        setSnackbars,
+    } = props
+
     const [ playerSet, setPlayer ] = useState(1)
     const [ P1, SetP1 ] = useState('')
     const [ P2, SetP2 ] = useState('')
