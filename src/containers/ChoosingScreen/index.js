@@ -29,16 +29,16 @@ function ChoosingScreen({ props }) {
         setBackgroundActive,
         snackbars,
         setSnackbars,
-        DEVELOPMENT,
+        P1,
+        SetP1,
+        P2,
+        SetP2,
     } = props
 
     // Jogador atual
     const [ playerSet, setPlayer ] = useState(1)
 
-    // Máquina escolhida
-    const [ P1, SetP1 ] = useState(DEVELOPMENT ? 'watcher' : '')
-    const [ P2, SetP2 ] = useState(DEVELOPMENT ? 'strider' : '')
-
+    // Determina se o jogador 2 é máquina
     const [ isP2Machine, setIsP2Machine ] = useState(false)
 
     // Estado de ativação do modal de cada máquina

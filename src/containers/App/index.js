@@ -10,12 +10,24 @@ import ChoosingScreen from "../ChoosingScreen"
 import AloysThemeSongSnackbar from "../../components/AloysThemeSongSnackbar"
 import BackgroundModalComponent from "../../components/BackgroundModalComponent"
 import SnackbarComponent from "../../components/SnackbarComponent"
+import BattleScreen from "../BattleScreen"
 
 function App() {
-    const [ gameState, setGameState ] = useState("home")
-    const [ backgroundActive, setBackgroundActive ] = useState(false)
-    const [ snackbars, setSnackbars ] = useState({})
+    // Determina se o modo de jogo é DESENVOLVIMENTO
     const DEVELOPMENT = true
+
+    // Armazena a tela atual do jogo
+    const [ gameState, setGameState ] = useState("home")
+
+    // Determina se o background de suporte do ModalComponent está ativo
+    const [ backgroundActive, setBackgroundActive ] = useState(false)
+
+    // Determina
+    const [ snackbars, setSnackbars ] = useState({})
+
+    // Máquina escolhida
+    const [ P1, SetP1 ] = useState(DEVELOPMENT ? 'watcher' : '')
+    const [ P2, SetP2 ] = useState(DEVELOPMENT ? 'strider' : '')
 
     // Encapsulamento dos States dentro de Props
     const props = {
@@ -26,6 +38,10 @@ function App() {
         snackbars: snackbars,
         setSnackbars: setSnackbars,
         DEVELOPMENT: DEVELOPMENT,
+        P1: P1,
+        SetP1: SetP1,
+        P2: P2,
+        SetP2: SetP2,
     }
 
     return (
@@ -58,7 +74,7 @@ const RenderGameScreen = (props) => {
         case "choosing":
             return <ChoosingScreen props={ props } />
         case "battle":
-            return <p>TELA DE BATALHA</p>
+            return <BattleScreen   props={ props } />
         case "ending":
             return <p>VITÓRIA OU DERROTA</p>
         case "credits":
