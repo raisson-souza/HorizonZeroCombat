@@ -4,7 +4,12 @@ import "./styles.css"
 // AUDIOS
 import { AloysThemeAudio } from "../../assets/index"
 
-export default function AloysThemeSongSnackbar({ gameState }) {
+export default function AloysThemeSongSnackbar({ props }) {
+    const {
+        gameState,
+        DEVELOPMENT,
+    } = props
+
     return (
         <div
             className={
@@ -24,6 +29,7 @@ export default function AloysThemeSongSnackbar({ gameState }) {
                 src={ AloysThemeAudio }
                 controls={ ActivateSnackbar(gameState) }
                 id="aloys-theme-audio"
+                muted={ DEVELOPMENT }
             >
             </audio>
         </div>

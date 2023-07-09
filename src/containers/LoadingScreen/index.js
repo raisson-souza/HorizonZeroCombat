@@ -10,12 +10,17 @@ import SortedClue from "./components/SortedClue"
 function LoadingScreen({ props }) {
     const {
         setGameState,
+        DEVELOPMENT,
     } = props
 
-    const loadingSeconds = (1 * 2) * 10 // (seconds x 2) x 10
+    const loadingSeconds = (10 * 2) * 10 // (seconds x 2) x 10
     const [ gif, setGif                 ] = useState(1)
     const [ clueNumber, setClueNumber   ] = useState(0)
-    const [ barProgress, setBarProgress ] = useState(0)
+    const [ barProgress, setBarProgress ] = useState(
+        DEVELOPMENT
+            ? loadingSeconds
+            : 0
+    )
 
     useEffect(() => {
         setInterval(() => {

@@ -10,6 +10,7 @@ import PlayAudio from "../../functions/AloysAudio/PlayAudio"
 function InitialScreen({ props }) {
     const {
         setGameState,
+        DEVELOPMENT,
     } = props
 
     const [ hover, setHover ] = useState(false)
@@ -17,7 +18,8 @@ function InitialScreen({ props }) {
     const gameStart = () => {
         PlayAudio()
         setTimeout(() => {
-            setGameState("loading")
+            if (DEVELOPMENT) setGameState("choosing")
+            else setGameState("loading")
         }, 200)
     }
 

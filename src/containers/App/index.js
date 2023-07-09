@@ -15,6 +15,7 @@ function App() {
     const [ gameState, setGameState ] = useState("home")
     const [ backgroundActive, setBackgroundActive ] = useState(false)
     const [ snackbars, setSnackbars ] = useState({})
+    const DEVELOPMENT = true
 
     // Encapsulamento dos States dentro de Props
     const props = {
@@ -24,15 +25,14 @@ function App() {
         setBackgroundActive: setBackgroundActive,
         snackbars: snackbars,
         setSnackbars: setSnackbars,
+        DEVELOPMENT: DEVELOPMENT,
     }
 
-    return ( // ajudar essa div
-        <div 
-            className={ gameState !== "home" ? "app-box" : null }
+    return (
+        <div
+            className={ RenderOuterDivClassName(gameState) }
         >
-            <AloysThemeSongSnackbar 
-                gameState={ gameState }
-            />
+            <AloysThemeSongSnackbar props={ props }/>
             {
                 RenderBackgroundModalComponent(props)
             }
@@ -106,6 +106,12 @@ const RenderSnackbars = (props) => {
     return [...Array(components.length)].map((_, i) => (
         components[i]
     )) 
+}
+
+const RenderOuterDivClassName = (gameState) => { // verificar funcionalidade
+    return gameState !== "home"
+        ? "app-box"
+        : null
 }
 
 export default App

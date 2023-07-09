@@ -29,13 +29,19 @@ function ChoosingScreen({ props }) {
         setBackgroundActive,
         snackbars,
         setSnackbars,
+        DEVELOPMENT,
     } = props
 
+    // Jogador atual
     const [ playerSet, setPlayer ] = useState(1)
-    const [ P1, SetP1 ] = useState('')
-    const [ P2, SetP2 ] = useState('')
+
+    // Máquina escolhida
+    const [ P1, SetP1 ] = useState(DEVELOPMENT ? 'watcher' : '')
+    const [ P2, SetP2 ] = useState(DEVELOPMENT ? 'strider' : '')
+
     const [ isP2Machine, setIsP2Machine ] = useState(false)
 
+    // Estado de ativação do modal de cada máquina
     const [ machine1Modal, setMachine1Modal ] = useState(false)
     const [ machine2Modal, setMachine2Modal ] = useState(false)
     const [ machine3Modal, setMachine3Modal ] = useState(false)
@@ -46,6 +52,7 @@ function ChoosingScreen({ props }) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [machine1Modal, machine2Modal, machine3Modal, machine4Modal])
 
+    // Modais de cada máquina
     const modalsStatesList = [
         [machine1Modal, setMachine1Modal],
         [machine2Modal, setMachine2Modal],
@@ -53,6 +60,7 @@ function ChoosingScreen({ props }) {
         [machine4Modal, setMachine4Modal],
     ]
 
+    // Listagem das máquinas (Valor de P1 e P2)
     const machinesList = [
         "watcher",
         "strider",
@@ -60,6 +68,8 @@ function ChoosingScreen({ props }) {
         "grazer",
     ]
 
+    // Informações das máquinas
+    // [ nome, [ vida, energia, ataque ], imagem ]
     const machinesInfos = [
         ["watcher", [10, 25, '2/4'], WatcherImage],
         ["strider", [15, 20, '3/5'], StriderImage],
@@ -67,6 +77,7 @@ function ChoosingScreen({ props }) {
         ["grazer", [20, 10, '3/5'], GrazerImage],
     ]
 
+    // Nome e icone de cada ícone de habilidade das máquinas
     const iconsList = [
         ["Lock Biofuel", MarkedTestTubeIcon],
         ["Stun", StunIcon],
