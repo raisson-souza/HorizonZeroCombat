@@ -9,10 +9,10 @@ import BattlePowerUps from "./components/BattlePowerUps"
 import { MachinesInfos } from "../../data/machines"
 
 // CLASSES
+import Props from "../../classes/props"
 import Machine from "../../classes/machine"
 
-function BattleScreen({ props = {} }) {
-    // criar uma classe props e usar em todos os containers
+function BattleScreen({ props = new Props() }) {
     const {
         P1,
         P2,

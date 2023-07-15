@@ -17,14 +17,16 @@ import {
     MachinesInfos,
 } from "../../data/machines"
 
-function ChoosingScreen({ props }) {
+// CLASSES
+import Props from "../../classes/props"
+
+function ChoosingScreen({ props = new Props() }) {
     const {
-        setGameState,
-        setBackgroundActive,
-        snackbars,
-        setSnackbars,
+        SetGameState,
+        SetBackgroundActive,
+        Snackbars,
+        SetSnackbars,
         P1,
-        SetP1,
         P2,
         SetP2,
     } = props
@@ -42,7 +44,7 @@ function ChoosingScreen({ props }) {
     const [ machine4Modal, setMachine4Modal ] = useState(false)
 
     useEffect(() => {
-        setBackgroundActive(machine1Modal || machine2Modal || machine3Modal || machine4Modal)
+        SetBackgroundActive(machine1Modal || machine2Modal || machine3Modal || machine4Modal)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [machine1Modal, machine2Modal, machine3Modal, machine4Modal])
 
@@ -69,16 +71,11 @@ function ChoosingScreen({ props }) {
                     <div className="choosing-players-area">
                         {
                             RenderMachines(
+                                props,
                                 playerSet,
-                                P1,
-                                P2,
-                                SetP1,
-                                SetP2,
                                 MachinesInfos,
                                 isP2Machine,
                                 modalsStatesList,
-                                snackbars,
-                                setSnackbars,
                             )
                         }
                     </div>
@@ -103,9 +100,9 @@ function ChoosingScreen({ props }) {
                         <FightButton
                             P1={ P1 }
                             P2={ P2 }
-                            setGameState={ setGameState }
-                            snackbars={ snackbars }
-                            setSnackbars={ setSnackbars }
+                            setGameState={ SetGameState }
+                            snackbars={ Snackbars }
+                            setSnackbars={ SetSnackbars }
                         />
                     </div>
                 </footer>
@@ -115,17 +112,21 @@ function ChoosingScreen({ props }) {
 }
 
 const RenderMachines = (
+    props = new Props(),
     playerSet,
-    P1,
-    P2,
-    SetP1,
-    SetP2,
     machinesInfos,
     isP2Machine,
     setIsModalsOpen,
-    snackbars,
-    setSnackbars,
 ) => {
+    const {
+        P1,
+        P2,
+        SetP1,
+        SetP2,
+        Snackbars,
+        SetSnackbars
+    } = props
+
     return Object.keys(machinesInfos)
         .map((machine, i) => (
             <Machine
@@ -145,14 +146,17 @@ const RenderMachines = (
                 iconImage={ machinesInfos[machine]["habilityIcon"] }
                 isP2Machine={ isP2Machine }
                 setModalIsOpen={ setIsModalsOpen[i][1] }
-                snackbars={ snackbars }
-                setSnackbars={ setSnackbars }
+                snackbars={ Snackbars }
+                setSnackbars={ SetSnackbars }
                 key={ i }
             />
         ))
 }
 
-const RenderModals = (modalsList = {}, modalsStatesList = []) => {
+const RenderModals = (
+    modalsList = {},
+    modalsStatesList = []
+) => {
     return Object.keys(modalsList)
         .map((modal, i) => (
             modalsStatesList[i][0]

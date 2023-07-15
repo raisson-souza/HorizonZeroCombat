@@ -7,9 +7,12 @@ import { PlayCircleIconSvg } from "../../assets/index"
 // FUNCTIONS
 import PlayAudio from "../../functions/AloysAudio/PlayAudio"
 
-function InitialScreen({ props }) {
+// CLASSES
+import Props from "../../classes/props"
+
+function InitialScreen({ props = new Props() }) {
     const {
-        setGameState,
+        SetGameState,
         DEVELOPMENT,
     } = props
 
@@ -18,8 +21,8 @@ function InitialScreen({ props }) {
     const gameStart = () => {
         PlayAudio()
         setTimeout(() => {
-            if (DEVELOPMENT) setGameState("choosing")
-            else setGameState("loading")
+            if (DEVELOPMENT) SetGameState("choosing")
+            else SetGameState("loading")
         }, 200)
     }
 

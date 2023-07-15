@@ -7,9 +7,12 @@ import LoadingComponent from "./components/LoadingComponent"
 import SortedGif from "./components/SortedGif"
 import SortedClue from "./components/SortedClue"
 
-function LoadingScreen({ props }) {
+// CLASSES
+import Props from "../../classes/props"
+
+function LoadingScreen({ props = new Props() }) {
     const {
-        setGameState,
+        SetGameState,
         DEVELOPMENT,
     } = props
 
@@ -56,7 +59,7 @@ function LoadingScreen({ props }) {
             </div>
             {
                 barProgress > loadingSeconds
-                    ? <PlayButton setGameState={ setGameState } />
+                    ? <PlayButton setGameState={ SetGameState } />
                     : <LoadingComponent barCount={ barProgress } barMax={ loadingSeconds }/>
             }
         </div>

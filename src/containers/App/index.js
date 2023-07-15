@@ -12,6 +12,9 @@ import BackgroundModalComponent from "../../components/BackgroundModalComponent"
 import SnackbarComponent from "../../components/SnackbarComponent"
 import BattleScreen from "../BattleScreen"
 
+// CLASSES
+import Props from "../../classes/props"
+
 function App() {
     // Determina se o modo de jogo é DESENVOLVIMENTO
     const DEVELOPMENT = true
@@ -30,20 +33,19 @@ function App() {
     const [ P1, SetP1 ] = useState(DEVELOPMENT ? 'watcher' : '')
     const [ P2, SetP2 ] = useState(DEVELOPMENT ? 'strider' : '')
 
-    // Encapsulamento dos States dentro de Props
-    const props = {
-        gameState: gameState,
-        setGameState: setGameState,
-        backgroundActive: backgroundActive,
-        setBackgroundActive: setBackgroundActive,
-        snackbars: snackbars,
-        setSnackbars: setSnackbars,
-        DEVELOPMENT: DEVELOPMENT,
-        P1: P1,
-        SetP1: SetP1,
-        P2: P2,
-        SetP2: SetP2,
-    }
+    const props = new Props(
+        gameState,
+        setGameState,
+        backgroundActive,
+        setBackgroundActive,
+        snackbars,
+        setSnackbars,
+        DEVELOPMENT,
+        P1,
+        SetP1,
+        P2,
+        SetP2,
+    )
 
     return (
         <div
@@ -64,10 +66,8 @@ function App() {
 }
 
 // Renderiza a tela atual do jogo
-const RenderGameScreen = (props) => {
-
-    // Todos os States são passados por dentro de props
-    switch (props.gameState) {
+const RenderGameScreen = (props = new Props()) => {
+    switch (props.GameState) {
         case "home":
             return <InitialScreen  props={ props } />
         case "loading":
@@ -86,8 +86,8 @@ const RenderGameScreen = (props) => {
 }
 
 // Renderiza o Background de suporte do ModalComponent dos modais das máquinas
-const RenderBackgroundModalComponent = (props) => {
-    return props.backgroundActive
+const RenderBackgroundModalComponent = (props = new Props()) => {
+    return props.BackgroundActive
         ? (
             <BackgroundModalComponent
                 isActive={ true }
@@ -97,23 +97,23 @@ const RenderBackgroundModalComponent = (props) => {
 }
 
 // Renderiza as Snackbars presentes na tela
-const RenderSnackbars = (props) => {
+const RenderSnackbars = (props = new Props()) => {
     const {
-        snackbars,
-        setSnackbars,
+        Snackbars,
+        SetSnackbars,
     } = props
 
     const components = []
 
-    for (let snackbar in snackbars) {
+    for (let snackbar in Snackbars) {
         // snackbar é a chave de snackbars
         components.push(
             <SnackbarComponent
-                snackbars={ snackbars }
-                setSnackbars={ setSnackbars }
-                snackbar={ snackbars[snackbar][0] }
-                type={ snackbars[snackbar][1] }
-                position={ snackbars[snackbar][2] }
+                snackbars={ Snackbars }
+                setSnackbars={ SetSnackbars }
+                snackbar={ Snackbars[snackbar][0] }
+                type={ Snackbars[snackbar][1] }
+                position={ Snackbars[snackbar][2] }
                 id={ snackbar }
                 key={ snackbar }
             />

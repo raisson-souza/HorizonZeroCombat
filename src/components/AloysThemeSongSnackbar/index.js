@@ -4,30 +4,33 @@ import "./styles.css"
 // AUDIOS
 import { AloysThemeAudio } from "../../assets/index"
 
-export default function AloysThemeSongSnackbar({ props }) {
+// CLASSES
+import Props from "../../classes/props"
+
+export default function AloysThemeSongSnackbar({ props = new Props() }) {
     const {
-        gameState,
+        GameState,
         DEVELOPMENT,
     } = props
 
     return (
         <div
             className={
-                ActivateSnackbar(gameState)
+                ActivateSnackbar(GameState)
                     ? "app-snackbar app-snackbar-on"
                     : "app-snackbar app-snackbar-off"
                 }
         >
             <p>
                 {
-                    ActivateSnackbar(gameState)
+                    ActivateSnackbar(GameState)
                         ? "Aloy's Theme"
                         : null
                 }
             </p>
             <audio
                 src={ AloysThemeAudio }
-                controls={ ActivateSnackbar(gameState) }
+                controls={ ActivateSnackbar(GameState) }
                 id="aloys-theme-audio"
                 muted={ DEVELOPMENT }
             >
@@ -37,6 +40,7 @@ export default function AloysThemeSongSnackbar({ props }) {
 }
 
 const ActivateSnackbar = (gameState) => {
+    // Define quais telas a Snackbar da música da Aloy aparece
     const screens = ['home', 'loading', 'choosing']
 
     return screens.includes(gameState)
