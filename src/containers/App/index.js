@@ -17,7 +17,8 @@ function App() {
     const DEVELOPMENT = true
 
     // Armazena a tela atual do jogo
-    const [ gameState, setGameState ] = useState("home")
+    // ALTERAR PARA HOME AO FINALIZAR O DESENVOLVIMENTO DE COMBAT SCREEN!!!!!!!!!!!
+    const [ gameState, setGameState ] = useState("battle")
 
     // Determina se o background de suporte do ModalComponent está ativo
     const [ backgroundActive, setBackgroundActive ] = useState(false)

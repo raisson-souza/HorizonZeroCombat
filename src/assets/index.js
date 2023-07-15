@@ -43,6 +43,8 @@ import WatcherBackgroundImage from "./images/machines_background/watcher_backgro
 
 // WALLPAPERS
 import HorizonZeroDawnWallpaperImage from "./images/wallpapers/horizon_zero_dawn_wallpaper.jpg"
+import HorizonZeroDawnWallpaperImage2 from "./images/wallpapers/horizon_zero_dawn_wallpaper2.jpg"
+// ajustar esses nomes para Image01 e Image02
 
 // SVG
 import ComputerIconSvg from "./svg/ComputerIcon"
@@ -86,6 +88,7 @@ export {
     StriderBackgroundImage,
     WatcherBackgroundImage,
     HorizonZeroDawnWallpaperImage,
+    HorizonZeroDawnWallpaperImage2,
     ComputerIconSvg,
     InfoIconSvg,
     PlayArrowIconSvg,
