@@ -1,1 +1,21 @@
-/*# sourceMappingURL=styles.css.map */
+.battle-power-ups {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.battle-power-ups > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.battle-power-ups .division {
+  width: 3px;
+  background-color: black;
+  height: 70px;
+}
+.battle-power-ups .battle-power-ups {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+}/*# sourceMappingURL=styles.css.map */

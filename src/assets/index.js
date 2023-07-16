@@ -27,6 +27,7 @@ import BrokenTestTubeIcon from "./icons/broken_test_tube.png"
 import MarkedTestTubeIcon from "./icons/marked_test_tube.png"
 import StunIcon from "./icons/stun_icon.png"
 import SwordIcon from "./icons/sword_icon.png"
+import PauseIcon from "./icons/pause_icon.png"
 
 // IMAGES
 // MACHINES
@@ -79,6 +80,7 @@ export {
     MarkedTestTubeIcon,
     StunIcon,
     SwordIcon,
+    PauseIcon,
     GrazerImage,
     ScrapperImage,
     StriderImage,
@@ -96,3 +98,4 @@ export {
     ShieldIconSvg,
     CloseIcon,
 }
+// refatoração e padronização geral

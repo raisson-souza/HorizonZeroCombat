@@ -1,5 +1,10 @@
-import Machine from "../../../../classes/machine"
 import "./styles.css"
+
+// CLASSES
+import Machine from "../../../../classes/machine"
+
+// COMPONENTS
+import IconComponent from "../../../../components/IconComponent"
 
 function BattleArea({
     machine = new Machine(),
@@ -26,10 +31,10 @@ function BattleArea({
             className="battle-area"
             style={ RenderBattleAreaStyle( )}
         >
-            <img
-                className="machine-image"
-                alt={ `Máquina ${ machine.Name }`}
-                src={ machine.MachineRaw.image }
+            <IconComponent
+                iconPath={ machine.MachineRaw.image }
+                iconAlt={ `Máquina ${ machine.Name }` }
+                iconWidth="50%"
             />
             <div className="machine-trait machine-life">
                 ❤️
@@ -37,7 +42,9 @@ function BattleArea({
                     max={ machine.TotalLife }
                     value={ machine.Life }
                 />
-                { `${ machine.TotalLife } / ${ machine.Life }` }
+                <p>
+                    { `${ machine.TotalLife } / ${ machine.Life }` }
+                </p>
             </div>
             <div className="machine-trait machine-energy">
                 🧪
@@ -45,16 +52,19 @@ function BattleArea({
                     max={ machine.TotalEnergy }
                     value={ machine.Energy }
                 />
-                { `${ machine.TotalEnergy } / ${ machine.Energy }` }
+                <p>
+                    { `${ machine.TotalEnergy } / ${ machine.Energy }` }
+                </p>
             </div>
             <div className="machine-hability">
-                <img
-                    alt={ `${ machine.Name }'s ${ machine.MachineRaw.habilityName }` }
-                    src={ machine.MachineRaw.habilityIcon }
+                <IconComponent
+                    iconPath={ machine.MachineRaw.habilityIcon }
+                    iconAlt={ `${ machine.Name }'s ${ machine.MachineRaw.habilityName }` }
+                    iconWidth="50px"
                 />
             </div>
         </div>
-    ) // ver se tem componente de icone
+    )
 }
 
 export default BattleArea

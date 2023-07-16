@@ -3,16 +3,20 @@
     flex-direction: column;
     align-items: center;
 
-    .machine-image {
-        width: 50%;
-    }
-
     .machine-trait {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 10px;
-        // FONTE
+        
+        p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 15px;
+            background-color: purple;
+            border-radius: 50%;
+            padding: 7px;
+            color: white;
+        }
     }
 
     .machine-life {
@@ -31,9 +35,5 @@
         margin-top: 15px;
         border: 1px black solid;
         border-radius: 50%;
-
-        img {
-            width: 50px;
-        }
     }
 }

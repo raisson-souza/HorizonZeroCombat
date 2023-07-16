@@ -3,14 +3,19 @@
   flex-direction: column;
   align-items: center;
 }
-.battle-area .machine-image {
-  width: 50%;
-}
 .battle-area .machine-trait {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+}
+.battle-area .machine-trait p {
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  background-color: purple;
+  border-radius: 50%;
+  padding: 7px;
+  color: white;
 }
 .battle-area .machine-life progress {
   accent-color: red;
@@ -22,7 +27,4 @@
   margin-top: 15px;
   border: 1px black solid;
   border-radius: 50%;
-}
-.battle-area .machine-hability img {
-  width: 50px;
 }/*# sourceMappingURL=styles.css.map */

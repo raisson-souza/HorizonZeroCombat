@@ -16,7 +16,6 @@ function BattleScreen({ props = new Props() }) {
     const {
         P1,
         P2,
-        // DEVELOPMENT,
     } = props
 
     const [ M1, SetM1 ] = useState(new Machine(P1, MachinesInfos))
@@ -34,7 +33,7 @@ function BattleScreen({ props = new Props() }) {
         props.setGameState("ending")
     }
 
-    return ( // responsividade!
+    return (
         <div className="battle-box">
             <header>
                 <p>Horizon&ensp;Zero<span>&ensp;Combat</span></p>
@@ -47,9 +46,7 @@ function BattleScreen({ props = new Props() }) {
                 </div>
             </section>
             <footer>
-                <div className="battle-power-ups">
-                    <BattlePowerUps props={ innerProps } />
-                </div>
+                <BattlePowerUps props={ innerProps } />
             </footer>
         </div>
     )
